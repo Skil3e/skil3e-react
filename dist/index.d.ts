@@ -5,8 +5,6 @@ export { default as Select } from "./components/Forms/Select";
 export { default as Switch } from "./components/Forms/Switch";
 export { default as Icon } from "./components/Icon/Icon";
 export { default as MenuToggle } from "./components/MenuToggle/MenuToggle";
-export { Intents } from "./types";
-export { Sizes } from "./types";
 export { ButtonProps } from './types';
 export { InputWrapperProps } from './types';
 export { InputProps } from './types';

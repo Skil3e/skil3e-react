@@ -1,0 +1,1068 @@
+{
+  "config": {
+    "title": "Docz Example Typescript",
+    "description": "My awesome app using docz",
+    "menu": [],
+    "version": "2.0.0-rc.41",
+    "repository": null,
+    "native": false,
+    "themeConfig": {},
+    "separator": "-",
+    "typescript": true
+  },
+  "entries": [
+    {
+      "key": "README.md",
+      "value": {
+        "id": "04c6e90faac2675aa89e2176d2eec7d8",
+        "filepath": "README.md",
+        "fullpath": "D:\\GitHub\\skil3e-react\\docz\\README.md",
+        "link": "",
+        "hidden": false,
+        "slug": "readme",
+        "route": "/readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "typescript-docz-example",
+            "depth": 1,
+            "value": "Typescript Docz example"
+          },
+          {
+            "slug": "using-create-docz-app",
+            "depth": 2,
+            "value": "Using  create-docz-app"
+          },
+          {
+            "slug": "download-manually",
+            "depth": 2,
+            "value": "Download manually"
+          },
+          {
+            "slug": "setup",
+            "depth": 2,
+            "value": "Setup"
+          },
+          {
+            "slug": "run",
+            "depth": 2,
+            "value": "Run"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/index.mdx",
+      "value": {
+        "name": "Getting Started",
+        "route": "/",
+        "id": "6576455a124f9aaefd860597f03a8fe4",
+        "filepath": "src/index.mdx",
+        "fullpath": "D:\\GitHub\\skil3e-react\\docz\\src\\index.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "getting-started",
+            "depth": 1,
+            "value": "Getting Started"
+          },
+          {
+            "slug": "consistency",
+            "depth": 2,
+            "value": "Consistency"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Buttons/Button.mdx",
+      "value": {
+        "name": "Button",
+        "menu": "Components",
+        "id": "2877263cc1c17b55159af2a7ab4d04c9",
+        "filepath": "src/components/Buttons/Button.mdx",
+        "fullpath": "D:\\GitHub\\skil3e-react\\docz\\src\\components\\Buttons\\Button.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-buttons-button",
+        "route": "/src-components-buttons-button",
+        "headings": [
+          {
+            "slug": "basic",
+            "depth": 2,
+            "value": "Basic"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "src/src/index.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Button",
+          "methods": [],
+          "props": {
+            "look": {
+              "defaultValue": null,
+              "description": "",
+              "name": "look",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"fill\" | \"minimal\" | \"link\" | \"outline\" | undefined"
+              }
+            },
+            "intent": {
+              "defaultValue": null,
+              "description": "",
+              "name": "intent",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | undefined"
+              }
+            },
+            "size": {
+              "defaultValue": null,
+              "description": "",
+              "name": "size",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | undefined"
+              }
+            },
+            "fullwidth": {
+              "defaultValue": null,
+              "description": "",
+              "name": "fullwidth",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            }
+          }
+        },
+        {
+          "description": "",
+          "displayName": "InputWrapper",
+          "methods": [],
+          "props": {
+            "inputID": {
+              "defaultValue": null,
+              "description": "",
+              "name": "inputID",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "name": {
+              "defaultValue": null,
+              "description": "",
+              "name": "name",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "errors": {
+              "defaultValue": null,
+              "description": "",
+              "name": "errors",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            }
+          }
+        },
+        {
+          "description": "",
+          "displayName": "Input",
+          "methods": [],
+          "props": {
+            "wrapperClassName": {
+              "defaultValue": null,
+              "description": "",
+              "name": "wrapperClassName",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "errors": {
+              "defaultValue": null,
+              "description": "",
+              "name": "errors",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            },
+            "type": {
+              "defaultValue": null,
+              "description": "",
+              "name": "type",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"search\" | \"time\" | \"password\" | \"datetime-local\" | \"file\" | \"month\" | \"week\" | undefined"
+              }
+            }
+          }
+        },
+        {
+          "description": "",
+          "displayName": "Select",
+          "methods": [],
+          "props": {
+            "wrapperClassName": {
+              "defaultValue": null,
+              "description": "",
+              "name": "wrapperClassName",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "errors": {
+              "defaultValue": null,
+              "description": "",
+              "name": "errors",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            },
+            "options": {
+              "defaultValue": null,
+              "description": "",
+              "name": "options",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": true,
+              "type": {
+                "name": "Option[]"
+              }
+            }
+          }
+        },
+        {
+          "description": "",
+          "displayName": "Switch",
+          "methods": [],
+          "props": {
+            "id": {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": true,
+              "type": {
+                "name": "string"
+              }
+            },
+            "className": {
+              "defaultValue": null,
+              "description": "",
+              "name": "className",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "title": {
+              "defaultValue": null,
+              "description": "",
+              "name": "title",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "onChange": {
+              "defaultValue": null,
+              "description": "",
+              "name": "onChange",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": true,
+              "type": {
+                "name": "() => void"
+              }
+            },
+            "checked": {
+              "defaultValue": null,
+              "description": "",
+              "name": "checked",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": true,
+              "type": {
+                "name": "boolean"
+              }
+            },
+            "emoji": {
+              "defaultValue": null,
+              "description": "",
+              "name": "emoji",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "size": {
+              "defaultValue": null,
+              "description": "",
+              "name": "size",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | undefined"
+              }
+            }
+          }
+        },
+        {
+          "description": "",
+          "displayName": "Icon",
+          "methods": [],
+          "props": {
+            "size": {
+              "defaultValue": null,
+              "description": "",
+              "name": "size",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "number | \"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | undefined"
+              }
+            },
+            "className": {
+              "defaultValue": null,
+              "description": "",
+              "name": "className",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "title": {
+              "defaultValue": null,
+              "description": "",
+              "name": "title",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "fill": {
+              "defaultValue": null,
+              "description": "",
+              "name": "fill",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | undefined"
+              }
+            },
+            "height": {
+              "defaultValue": null,
+              "description": "",
+              "name": "height",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "number | undefined"
+              }
+            },
+            "icon": {
+              "defaultValue": null,
+              "description": "",
+              "name": "icon",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": true,
+              "type": {
+                "name": "IconsProps"
+              }
+            }
+          }
+        },
+        {
+          "description": "",
+          "displayName": "MenuToggle",
+          "methods": [],
+          "props": {
+            "isOpen": {
+              "defaultValue": null,
+              "description": "",
+              "name": "isOpen",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "MenuToggleProps"
+              },
+              "required": true,
+              "type": {
+                "name": "boolean"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/src/types.tsx",
+      "value": []
+    },
+    {
+      "key": "src/src/utilities.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "joinIgnoreEmpty",
+          "methods": [],
+          "props": {}
+        }
+      ]
+    },
+    {
+      "key": "src/components/Buttons/Button.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Button",
+          "methods": [],
+          "props": {
+            "look": {
+              "defaultValue": {
+                "value": "fill"
+              },
+              "description": "",
+              "name": "look",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"fill\" | \"minimal\" | \"link\" | \"outline\" | undefined"
+              }
+            },
+            "intent": {
+              "defaultValue": {
+                "value": "primary"
+              },
+              "description": "",
+              "name": "intent",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | undefined"
+              }
+            },
+            "size": {
+              "defaultValue": null,
+              "description": "",
+              "name": "size",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | undefined"
+              }
+            },
+            "fullwidth": {
+              "defaultValue": null,
+              "description": "",
+              "name": "fullwidth",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "ButtonProps"
+              },
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/Forms/Input.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Input",
+          "methods": [],
+          "props": {
+            "wrapperClassName": {
+              "defaultValue": null,
+              "description": "",
+              "name": "wrapperClassName",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "errors": {
+              "defaultValue": null,
+              "description": "",
+              "name": "errors",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            },
+            "type": {
+              "defaultValue": null,
+              "description": "",
+              "name": "type",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"search\" | \"time\" | \"password\" | \"datetime-local\" | \"file\" | \"month\" | \"week\" | undefined"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/Forms/InputWrapper.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "InputWrapper",
+          "methods": [],
+          "props": {
+            "inputID": {
+              "defaultValue": null,
+              "description": "",
+              "name": "inputID",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "name": {
+              "defaultValue": null,
+              "description": "",
+              "name": "name",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "errors": {
+              "defaultValue": null,
+              "description": "",
+              "name": "errors",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "InputWrapperProps"
+              },
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/Forms/Select.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Select",
+          "methods": [],
+          "props": {
+            "wrapperClassName": {
+              "defaultValue": null,
+              "description": "",
+              "name": "wrapperClassName",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "errors": {
+              "defaultValue": null,
+              "description": "",
+              "name": "errors",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            },
+            "options": {
+              "defaultValue": null,
+              "description": "",
+              "name": "options",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SelectProps"
+              },
+              "required": true,
+              "type": {
+                "name": "Option[]"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/Forms/Switch.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Switch",
+          "methods": [],
+          "props": {
+            "id": {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": true,
+              "type": {
+                "name": "string"
+              }
+            },
+            "className": {
+              "defaultValue": null,
+              "description": "",
+              "name": "className",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "title": {
+              "defaultValue": null,
+              "description": "",
+              "name": "title",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "onChange": {
+              "defaultValue": null,
+              "description": "",
+              "name": "onChange",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": true,
+              "type": {
+                "name": "() => void"
+              }
+            },
+            "checked": {
+              "defaultValue": null,
+              "description": "",
+              "name": "checked",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": true,
+              "type": {
+                "name": "boolean"
+              }
+            },
+            "emoji": {
+              "defaultValue": null,
+              "description": "",
+              "name": "emoji",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "size": {
+              "defaultValue": null,
+              "description": "",
+              "name": "size",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "SwitchProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | undefined"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/Icon/Icon.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Icon",
+          "methods": [],
+          "props": {
+            "size": {
+              "defaultValue": null,
+              "description": "",
+              "name": "size",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "number | \"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | undefined"
+              }
+            },
+            "className": {
+              "defaultValue": null,
+              "description": "",
+              "name": "className",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "title": {
+              "defaultValue": null,
+              "description": "",
+              "name": "title",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "fill": {
+              "defaultValue": null,
+              "description": "",
+              "name": "fill",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | undefined"
+              }
+            },
+            "height": {
+              "defaultValue": null,
+              "description": "",
+              "name": "height",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": false,
+              "type": {
+                "name": "number | undefined"
+              }
+            },
+            "icon": {
+              "defaultValue": null,
+              "description": "",
+              "name": "icon",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "IconProps"
+              },
+              "required": true,
+              "type": {
+                "name": "IconsProps"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/MenuToggle/MenuToggle.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "MenuToggle",
+          "methods": [],
+          "props": {
+            "isOpen": {
+              "defaultValue": null,
+              "description": "",
+              "name": "isOpen",
+              "parent": {
+                "fileName": "D:/GitHub/skil3e-react/docz/src/src/types.tsx",
+                "name": "MenuToggleProps"
+              },
+              "required": true,
+              "type": {
+                "name": "boolean"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,7 @@
     "target": "ES5"
   },
   "include": [
-    "Storybook/src/src/**/*.tsx"
+    "docz/src/**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }

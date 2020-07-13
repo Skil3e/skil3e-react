@@ -3,7 +3,7 @@ import {terser} from "rollup-plugin-terser";
 import pkg from "./package.json"
 
 export default {
-    input: "./src/index.tsx",
+    input: "./Storybook/src/src/index.tsx",
     output: [
         {
             file: pkg.main,

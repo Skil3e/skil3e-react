@@ -5,10 +5,13 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import Button from "./Button.tsx";
-
-## Basic
+import "skil3e-css/src/basic.scss";
+import "skil3e-css/src/components/buttons/_button.scss";
+import "skil3e-css/src/components/buttons/_fill.scss";
+import "skil3e-css/src/components/buttons/_outline.scss";
 
 <Playground>
-  <Button>Click me</Button>
+  <Button look="fill" intent="primary">Click me</Button>
 </Playground>
 
+<Props of={Button}></Props>

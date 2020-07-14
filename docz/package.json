@@ -10,7 +10,7 @@
     "package.json"
   ],
   "scripts": {
-    "dev": "docz dev",
+    "dev": "rimraf .docz && docz dev",
     "build": "docz build"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4"
+    "@types/react-dom": "^16.8.4",
+    "rimraf": "^3.0.2"
   }
 }

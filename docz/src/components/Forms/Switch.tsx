@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SwitchProps } from "../../types";
+import { SwitchProps } from "../types";
 
 const Switch = React.forwardRef(
     ( props: SwitchProps, ref?: React.Ref<HTMLInputElement> ) => {

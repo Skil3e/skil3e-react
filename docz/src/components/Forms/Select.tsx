@@ -1,7 +1,7 @@
 import * as React from "react";
-import { createLabel } from "../../utilities";
+import { createLabel } from "../utilities";
 import InputWrapper from "./InputWrapper";
-import { SelectProps } from "../../types";
+import { SelectProps } from "../types";
 
 const Select = React.forwardRef(
     ( props: SelectProps, ref?: React.Ref<HTMLSelectElement> ) => {

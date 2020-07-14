@@ -1,6 +1,6 @@
 import * as React from "react";
-import { joinIgnoreEmpty } from "../../utilities";
-import { MenuToggleProps } from "../../types";
+import { joinIgnoreEmpty } from "../utilities";
+import { MenuToggleProps } from "../types";
 
 const MenuToggle = React.forwardRef(
     ( props: MenuToggleProps, ref?: React.Ref<HTMLDivElement> ) => {

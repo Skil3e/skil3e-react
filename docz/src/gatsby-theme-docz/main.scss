@@ -1,0 +1,29 @@
+@use "~skil3e-css/src/skil3e";
+
+#props {
+  margin-top : 20px;
+}
+
+.npm__react-simple-code-editor__textarea {
+  padding : 10px !important;
+}
+
+[data-testid="prop"] {
+  padding : 20px !important;
+
+  & * {
+    padding-bottom : 0 !important;
+  }
+}
+
+[data-testid="prop-name"] {
+  width : 15%;
+}
+
+[data-testid="prop-type"] {
+  width : 55%;
+}
+
+[data-testid="prop-default-value"] {
+  width : 15%;
+}

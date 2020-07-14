@@ -1,6 +1,6 @@
 import * as React from "react";
-import { joinIgnoreEmpty } from "../../utilities";
-import { IconProps } from "../../types";
+import { joinIgnoreEmpty } from "../utilities";
+import { IconProps } from "../types";
 
 const Icon = React.forwardRef(
     ( props: IconProps, ref?: React.Ref<SVGSVGElement> ) => {

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { joinIgnoreEmpty } from "../../utilities";
-import { ButtonProps } from "../../types";
+import { joinIgnoreEmpty } from "../utilities";
+import { ButtonProps } from "../types";
 
 const Button = React.forwardRef(
     ( props: ButtonProps, ref?: React.Ref<HTMLButtonElement> ) => {
@@ -13,8 +13,9 @@ const Button = React.forwardRef(
 )
 
 Button.defaultProps = {
-    look: "fill",
+    look  : "fill",
     intent: "primary",
 }
+
 export default Button;
 

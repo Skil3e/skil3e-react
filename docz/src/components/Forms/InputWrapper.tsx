@@ -1,6 +1,6 @@
 import * as React from "react";
-import { joinIgnoreEmpty } from "../../utilities";
-import { InputWrapperProps } from "../../types";
+import { joinIgnoreEmpty } from "../utilities";
+import { InputWrapperProps } from "../types";
 
 const InputWrapper = React.forwardRef(
     ( props: InputWrapperProps, ref?: React.Ref<HTMLDivElement> ) => {

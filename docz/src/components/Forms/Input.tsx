@@ -1,7 +1,7 @@
 import * as React from "react";
-import { createLabel } from "../../utilities";
+import { createLabel } from "../utilities";
 import InputWrapper from "./InputWrapper";
-import { InputProps } from "../../types";
+import { InputProps } from "../types";
 
 const Input = React.forwardRef(
     ( props: InputProps, ref?: React.Ref<HTMLInputElement> ) => {

@@ -1,17 +1,15 @@
 ---
 name: Button
-menu: Components
+menu: 2. Components
+route: /components/buttons
 ---
 
 import { Playground, Props } from 'docz'
 import Button from "./Button.tsx";
-import "skil3e-css/src/basic.scss";
-import "skil3e-css/src/components/buttons/_button.scss";
-import "skil3e-css/src/components/buttons/_fill.scss";
-import "skil3e-css/src/components/buttons/_outline.scss";
 
 <Playground>
   <Button look="fill" intent="primary">Click me</Button>
 </Playground>
 
-<Props of={Button}></Props>
+## Props
+<Props of={Button} />

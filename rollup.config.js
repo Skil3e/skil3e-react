@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import pkg from "./package.json"
+import copy from "rollup-plugin-copy";
 
 export default {
     input: "./docz/src/components/index.tsx",
@@ -31,5 +32,11 @@ export default {
         commonjs(),
         typescript(),
         terser(),
+        copy({
+            targets: [
+                { src: './LICENSE', dest: 'dist/' },
+                { src: './README.md', dest: 'dist/' },
+            ]
+        })
     ]
 };

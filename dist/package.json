@@ -1,0 +1,17 @@
+{
+  "name": "skil3e-react",
+  "version": "0.0.9",
+  "description": "React components library",
+  "main": "index.cjs.js",
+  "module": "index.esm.js",
+  "types": "index.d.js",
+  "author": "Skil3e",
+  "license": "MIT",
+  "dependencies": {
+    "skil3e-css": "^2.0.90"
+  },
+  "peerDependencies": {
+    "react": "<=^16.13.1",
+    "react-dom": "<=^16.13.1"
+  }
+}

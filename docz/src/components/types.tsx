@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } f
 //-------------------------------------------------------------------------------//
 // General
 //-------------------------------------------------------------------------------//
-export type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning';
+export type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | string;
 export type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 //-------------------------------------------------------------------------------//

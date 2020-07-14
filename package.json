@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && mkdirp dist && rollup -c"
+    "build": "rollup -c"
   },
   "author": "Skil3e",
   "license": "MIT",

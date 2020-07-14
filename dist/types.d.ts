@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
-export declare type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning';
+export declare type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | string;
 export declare type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     look?: "fill" | "minimal" | "link" | "outline";

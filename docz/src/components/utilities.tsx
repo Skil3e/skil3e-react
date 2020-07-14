@@ -27,9 +27,9 @@ function createBreakpointVars( variable: SizeWithBreak, prefix: string ) {
         util += (variable ? `${ prefix + variable }` : "")
     } else if (typeof variable === "object") {
         util += (variable.sm ? ` ${ prefix + variable.sm }` : "")
-        util += (variable.md ? ` ${ variable.md }__${ prefix + variable.md }` : "")
-        util += (variable.lg ? ` ${ variable.lg }__${ prefix + variable.lg }` : "")
-        util += (variable.xl ? ` ${ variable.xl }__${ prefix + variable.xl }` : "")
+        util += (variable.md ? ` md__${ prefix + variable.md }` : "")
+        util += (variable.lg ? ` lg__${ prefix + variable.lg }` : "")
+        util += (variable.xl ? ` xl__${ prefix + variable.xl }` : "")
     }
     return util;
 }

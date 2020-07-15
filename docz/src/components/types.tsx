@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } f
 //-------------------------------------------------------------------------------//
 // General
 //-------------------------------------------------------------------------------//
-export type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' ;
+export type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning'
 export type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export interface BreakPoints<T> {
@@ -15,6 +15,15 @@ export interface BreakPoints<T> {
 
 export type SizeWithBreak = Sizes | BreakPoints<Sizes>
 
+export interface Pos {
+    top?: Sizes | "auto"
+    bottom?: Sizes | "auto"
+    left?: Sizes | "auto"
+    right?: Sizes | "auto"
+    x?: Sizes | "auto"
+    y?: Sizes | "auto"
+}
+
 //-------------------------------------------------------------------------------//
 // Button
 //-------------------------------------------------------------------------------//
@@ -23,13 +32,14 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     intent?: Intents
     size?: Sizes
     fullwidth?: boolean
-    m?: SizeWithBreak
-    mt?: SizeWithBreak
-    mr?: SizeWithBreak
-    mb?: SizeWithBreak
-    ml?: SizeWithBreak
-    mx?: SizeWithBreak
-    my?: SizeWithBreak
+    margin?: BreakPoints<Pos>
+    // m?: SizeWithBreak
+    // mt?: SizeWithBreak
+    // mr?: SizeWithBreak
+    // mb?: SizeWithBreak
+    // ml?: SizeWithBreak
+    // mx?: SizeWithBreak
+    // my?: SizeWithBreak
 }
 
 //-------------------------------------------------------------------------------//

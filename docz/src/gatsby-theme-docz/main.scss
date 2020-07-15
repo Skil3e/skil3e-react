@@ -1,18 +1,22 @@
 @use "~skil3e-css/src/skil3e";
 
-#props {
-  margin-top : 20px;
+h1, h2, h3, h4, h5, h6 {
+  margin : .5em 0;
 }
 
 .npm__react-simple-code-editor__textarea {
   padding : 10px !important;
 }
 
+[data-testid="playground"] {
+  margin : .625em 0!important;
+}
+
 [data-testid="prop"] {
   padding : 20px !important;
 
   & * {
-    padding-bottom : 0 !important;
+	padding-bottom : 0 !important;
   }
 }
 

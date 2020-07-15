@@ -19,12 +19,22 @@ export const createLabel = ( name: string, operator: string = "-" ) => {
 //-------------------------------------------------------------------------------//
 // Spacers
 //-------------------------------------------------------------------------------//
-export function createSpacers( spacer?: BreakPoints<Pos>, prefix?: string ): string {
+interface Interface extends Pos, BreakPoints<Pos>{
+
+}
+export function createSpacers( spacer?: Interface, prefix?: string ): string {
     let mar: string = "";
     if (spacer && prefix) {
         if (typeof spacer === typeOfSizes) {
             mar += `${ prefix }--${ spacer }`
         } else {
+            mar += spacer.top ? `${prefix}t--${spacer.top}` : "";
+            mar += spacer.bottom ? `${prefix}b--${spacer.bottom}` : "";
+            mar += spacer.left ? `${prefix}l--${spacer.left}` : "";
+            mar += spacer.right ? `${prefix}r--${spacer.right}` : "";
+            mar += spacer.x ? `${prefix}x--${spacer.x}` : "";
+            mar += spacer.y ? `${prefix}y--${spacer.y}` : "";
+
             mar += makeSpacers( spacer, "sm", prefix )
             mar += makeSpacers( spacer, "md", prefix )
             mar += makeSpacers( spacer, "lg", prefix )
@@ -34,7 +44,7 @@ export function createSpacers( spacer?: BreakPoints<Pos>, prefix?: string ): str
     return mar
 }
 
-function makeSpacers( type: BreakPoints<Pos>, breakPoint: "sm" | "md" | "lg" | "xl", prefix: string ): string {
+function makeSpacers( type: BreakPoints<Pos>, breakPoint: "sm" | "md" | "lg" | "xl" , prefix: string ): string {
     let val: string = "";
     val += type[breakPoint] && typeof type[breakPoint]! === typeOfSizes && type[breakPoint]! ? `${ breakPoint }__${ prefix }--${ type[breakPoint]! }` : "";
     val += type[breakPoint] && type[breakPoint]!.top ? `${ breakPoint }__${ prefix }t--${ type[breakPoint]!.top }` : "";

@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } f
 //-------------------------------------------------------------------------------//
 // General
 //-------------------------------------------------------------------------------//
-export type Intents = 'primary' | 'accent' | 'success' | 'danger' | 'warning'
+export type Intents = 'accent' | 'info' | 'success' | 'danger' | 'warning'
 export type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export interface BreakPoints<T> {

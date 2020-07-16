@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "skil3e-react",
-  "description" : "React component library",
+  "description": "React component library",
   "version": "2.0.0-rc.41",
   "license": "MIT",
   "files": [
@@ -22,7 +22,7 @@
     "node-sass": "npm:sass@^1.26.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "skil3e-css": "^2.0.90"
+    "skil3e-css": "^2.0.91"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",

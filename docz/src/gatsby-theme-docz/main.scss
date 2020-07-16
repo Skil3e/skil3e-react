@@ -1,4 +1,8 @@
+@use "~skil3e-css/src/globals" with (
+$primary: #1FB6FF
+);
 @use "~skil3e-css/src/skil3e";
+@use "~skil3e-css/src/components/menu-toggle";
 
 h1, h2, h3, h4, h5, h6 {
   margin : .5em 0;

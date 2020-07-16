@@ -116,4 +116,5 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 //-------------------------------------------------------------------------------//
 export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
     isOpen: boolean
+    intent?: Intents
 }

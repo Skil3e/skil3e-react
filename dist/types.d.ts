@@ -1,11 +1,27 @@
 import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
-export declare type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | string;
+export declare type Intents = 'primary' | 'accent' | 'success' | 'danger' | 'warning';
 export declare type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export interface BreakPoints<T> {
+    sm?: T;
+    md?: T;
+    lg?: T;
+    xl?: T;
+}
+export declare type SizeWithBreak = Sizes | BreakPoints<Sizes>;
+export interface Pos {
+    top?: Sizes | "auto";
+    bottom?: Sizes | "auto";
+    left?: Sizes | "auto";
+    right?: Sizes | "auto";
+    x?: Sizes | "auto";
+    y?: Sizes | "auto";
+}
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     look?: "fill" | "minimal" | "link" | "outline";
     intent?: Intents;
-    size?: Sizes;
+    size?: 'xs' | 'sm' | 'lg' | 'xl';
     fullwidth?: boolean;
+    margin?: BreakPoints<Pos>;
 }
 export interface InputWrapperProps extends HTMLAttributes<HTMLDivElement> {
     inputID?: string;
@@ -59,5 +75,6 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 }
 export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
     isOpen: boolean;
+    intent?: Intents;
 }
 export {};

@@ -1,19 +1,24 @@
-@use "~skil3e-css/src/globals" with (
-$primary: #1FB6FF
+@use "~skil3e-css/src/maps";
+@use "~skil3e-css/src/functions-mixins/mixins" with (
+$border-radius: map-merge(maps.$border-radius, ("--4": 4px))
+);
+@use "~skil3e-css/src/themes" with (
+$themeDark: map-merge(maps.$themeDark, ("bg": #13161F, "border": #2d3747)),
+$themeLight: map-merge(maps.$themeLight, ("bg": #fff, "border": #ced4de))
 );
 @use "~skil3e-css/src/skil3e";
-@use "~skil3e-css/src/components/menu-toggle";
 
 h1, h2, h3, h4, h5, h6 {
   margin : .5em 0;
 }
+
 
 .npm__react-simple-code-editor__textarea {
   padding : 10px !important;
 }
 
 [data-testid="playground"] {
-  margin : .625em 0!important;
+  margin : .625em 0 !important;
 }
 
 [data-testid="prop"] {

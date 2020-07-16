@@ -7,19 +7,38 @@ route: /components/buttons
 import { Playground, Props } from 'docz'
 import Button from "./Button.tsx";
 
+## Intends
+<div class="bg--bg brd brd--border round--4 p--lg">
+  <Button margin={{ right: 'md' }} intent="accent">Click me</Button>
+  <Button margin={{ right: 'md' }} intent="info">Click me</Button>
+  <Button margin={{ right: 'md' }} intent="success">Click me</Button>
+  <Button margin={{ right: 'md' }} intent="danger">Click me</Button>
+  <Button margin={{ right: 'md' }} intent="warning">Click me</Button>
+</div>
+
 ## Looks
-<Playground>
+<div class="bg--bg brd brd--border round--4 p--lg">
   <Button margin={{ right: 'md' }} look="fill">Click me</Button>
   <Button margin={{ right: 'md' }} look="outline">Click me</Button>
   <Button margin={{ right: 'md' }} look="minimal">Click me</Button>
   <Button margin={{ right: 'md' }} look="link">Click me</Button>
-</Playground>
+</div>
+
+## Sizes
+<div class="bg--bg brd brd--border round--4 p--lg">
+  <Button margin={{ right: 'md' }} size="xs">Click me</Button>
+  <Button margin={{ right: 'md' }} size="sm">Click me</Button>
+  <Button margin={{ right: 'md' }} >Click me</Button>
+  <Button margin={{ right: 'md' }} size="lg">Click me</Button>
+  <Button margin={{ right: 'md' }} size="xl">Click me</Button>
+</div>
 
 ## Playground
 Open the code bellow to test the component
 <Playground>
-  <Button look="fill" intent="primary" margin={{ sm:{top: 'md'} }} >Click me</Button>
+  <Button look="fill" intent="accent" margin={{ sm:{left: 'md'} }} onClick={()=> alert("Clicked")}>Click me</Button>
 </Playground>
 
 ## Props
+All default react button props plus
 <Props of={Button} />

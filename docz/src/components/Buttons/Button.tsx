@@ -14,7 +14,7 @@ const Button = React.forwardRef(
 
 Button.defaultProps = {
     look  : "fill",
-    intent: "primary",
+    intent: "accent",
 }
 
 export default Button;

@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } f
 //-------------------------------------------------------------------------------//
 // General
 //-------------------------------------------------------------------------------//
-export type Intents = 'primary' | 'secondary' | 'success' | 'danger' | 'warning'
+export type Intents = 'primary' | 'accent' | 'success' | 'danger' | 'warning'
 export type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export interface BreakPoints<T> {
@@ -30,7 +30,7 @@ export interface Pos {
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     look?: "fill" | "minimal" | "link" | "outline"
     intent?: Intents
-    size?: Sizes
+    size?: 'xs' | 'sm' | 'lg' | 'xl';
     fullwidth?: boolean
     margin?: BreakPoints<Pos>
     // m?: SizeWithBreak

@@ -78,6 +78,7 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
 export interface SwitchProps {
     id: string
     className?: string
+    intent?: Intents
     title?: string
     onChange: () => void
     checked: boolean

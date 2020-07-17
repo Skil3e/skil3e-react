@@ -8,9 +8,9 @@ const InputWrapper = React.forwardRef(
         const className = joinIgnoreEmpty( "input-wrapper", props.className );
         return (
             <div { ...rest } ref={ ref } className={ className }>
-                { label && <label className={ "flex small px--sm" } htmlFor={ inputID }>{ label }</label> }
+                { label && <label className={ "flex small px--sm mb--xs" } htmlFor={ inputID }>{ label }</label> }
                 { children }
-                { errors && name && errors[name] && <span className={ "flex small px--sm text--danger" }>{ errors[name].message }</span> }
+                { errors && name && errors[name] && <span className={ "flex small px--sm text--danger mt--xs" }>{ errors[name].message }</span> }
             </div>
         )
     } )

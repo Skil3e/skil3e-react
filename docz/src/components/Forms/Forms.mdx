@@ -1,0 +1,63 @@
+---
+name: Inputs
+menu: 2. Components
+route: /components/inputs
+---
+
+import { Playground, Props } from 'docz'
+import InputWrapper from "./InputWrapper.tsx";
+import Input from "./Input.tsx";
+import Select from "./Select.tsx";
+import Switch from "./Switch.tsx";
+
+## InputWrapper
+A component wrapper for inputs. Make sure you use the same name and id with your input.
+<Playground>
+  <InputWrapper label="Label" name="test" inputID="test" errors={{test: {message: "There was an error"}}}>
+  <input type="text" id="test" name="test" />
+  </InputWrapper>
+</Playground>
+
+## InputWrapper Props
+All default React div props plus
+<Props of={InputWrapper} />
+
+## Input
+An input component wrapped with the input wrapper.
+<Playground>
+  <Input id="test-2" name="input" errors={{input: {message: "There was an error"}}}/>
+</Playground>
+
+## Input Props
+All default React input props plus. 
+<Props of={Input} />
+
+## Select
+A select component wrapped with the input wrapper.
+<Playground>
+  <Select id="test-2" name="input" errors={{input: {message: "There was an error"}}} 
+  options={[ 
+      {value: "option-1"}, 
+      {value: "option-2", label: "My custom label"} 
+  ]}
+  />
+</Playground>
+
+## Select Props
+All default React select props plus.
+<Props of={Select} />
+
+## Switch
+A styled checkbox component.
+<Playground>
+{() => {
+    const [toggled, setToggled] = React.useState(false)
+    function toggle() {
+        setToggled(!toggled)
+    }
+  return <Switch id="switch-1" label="Switch" checked={toggled} onChange={toggle} />
+  }}
+</Playground>
+
+## Switch Props
+<Props of={Switch} />

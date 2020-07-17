@@ -5,7 +5,7 @@ import { InputProps } from "../types";
 
 const Input = React.forwardRef(
     ( props: InputProps, ref?: React.Ref<HTMLInputElement> ) => {
-        const { type = "text", id, label, errors, className, wrapperClassName, ...rest } = props
+        const { type, id, label, errors, className, wrapperClassName, ...rest } = props
         return (
             <InputWrapper className={ wrapperClassName }
                           inputID={ id }
@@ -18,4 +18,8 @@ const Input = React.forwardRef(
         )
     } )
 
+
+Input.defaultProps = {
+    type  : "text",
+}
 export default Input

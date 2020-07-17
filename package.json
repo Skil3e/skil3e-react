@@ -36,7 +36,7 @@
     "typescript": "^3.9.6"
   },
   "dependencies": {
-    "skil3e-css": "^2.1.4"
+    "skil3e-css": "^2.1.10"
   },
   "peerDependencies": {
     "react": "<=^16.13.1",

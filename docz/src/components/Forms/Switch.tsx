@@ -1,11 +1,11 @@
 import * as React from "react";
 import { SwitchProps } from "../types";
-import { createSpacers, joinIgnoreEmpty } from "../utilities";
+import { joinIgnoreEmpty } from "../utilities";
 
 const Switch = React.forwardRef(
     ( props: SwitchProps, ref?: React.Ref<HTMLInputElement> ) => {
         const { id, title, intent, onChange, checked, emoji, className, label, size } = props;
-        const SwitchClassName = joinIgnoreEmpty( "switch flex--center", intent, size, className, );
+        const SwitchClassName = joinIgnoreEmpty( "switch flex--center", intent, size, className );
         return (
             <div className={ SwitchClassName } title={ title }>
                 <input ref={ ref } className="switch__checkbox" id={ id } type={ "checkbox" } onChange={ onChange } checked={ checked }/>

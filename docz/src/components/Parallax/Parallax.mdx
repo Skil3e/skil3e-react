@@ -1,0 +1,14 @@
+---
+name: Parallax
+menu: 2. Components
+route: /components/parallax-container
+---
+
+import { Playground, Props } from 'docz'
+import CSSParallax from "./CSSParallax.tsx";
+
+<Playground>
+    <CSSParallax className="flex--center-middle text--accent" style={{height: "50vh"}} image={"https://picsum.photos/id/0/5616/3744"} offset={-500} speed={5} reverseDirection={false}>
+                <h1>Content</h1>
+    </CSSParallax>
+</Playground>

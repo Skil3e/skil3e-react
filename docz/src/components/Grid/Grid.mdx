@@ -1,0 +1,21 @@
+---
+name: Grid
+menu: 2. Components
+route: /components/grid
+---
+
+import { Playground, Props } from 'docz'
+import {FlexRow, Column} from "../Grid.tsx";
+
+## Playground
+Open the code bellow to test the component
+<Playground>
+  <FlexRow style={{gap: 5}}>
+    <Column size={ { sm: 12, md: 6, lg: 6, xl: 4 }} padding="md">
+        Column
+    </Column>
+    <Column size={ { sm: 12, md: 6, lg: 6, xl: 4 }} padding="md">
+        Column
+    </Column>
+  </FlexRow>
+</Playground>

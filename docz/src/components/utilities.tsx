@@ -1,4 +1,4 @@
-import { BreakPoints, Pos } from "./types";
+import { BreakPoints, Pos} from "./types";
 
 const typeOfSizes = typeof 'xs' || 'sm' || 'md' || 'lg' || 'xl';
 
@@ -21,43 +21,57 @@ export const createLabel = ( name: string, operator: string = "-" ) => {
 // Spacers
 //-------------------------------------------------------------------------------//
 interface CreateSpacersProps extends Pos, BreakPoints<Pos> {
-
 }
 
 export function createSpacers( spacer?: CreateSpacersProps, prefix?: string ): string {
-    let mar: string = "";
+    let spc: string = "";
     if (spacer && prefix) {
         if (typeof spacer === typeOfSizes) {
-            mar += `${ prefix }--${ spacer }`
+            spc += `${ prefix }--${ spacer }`
         } else {
-            mar += spacer.top ? `${ prefix }t--${ spacer.top }` : "";
-            mar += spacer.bottom ? `${ prefix }b--${ spacer.bottom }` : "";
-            mar += spacer.left ? `${ prefix }l--${ spacer.left }` : "";
-            mar += spacer.right ? `${ prefix }r--${ spacer.right }` : "";
-            mar += spacer.x ? `${ prefix }x--${ spacer.x }` : "";
-            mar += spacer.y ? `${ prefix }y--${ spacer.y }` : "";
+            spc += spacer.top ? ` ${ prefix }t--${ spacer.top }` : "";
+            spc += spacer.bottom ? ` ${ prefix }b--${ spacer.bottom }` : "";
+            spc += spacer.left ? ` ${ prefix }l--${ spacer.left }` : "";
+            spc += spacer.right ? ` ${ prefix }r--${ spacer.right }` : "";
+            spc += spacer.x ? ` ${ prefix }x--${ spacer.x }` : "";
+            spc += spacer.y ? ` ${ prefix }y--${ spacer.y }` : "";
 
-            mar += makeSpacers( spacer, "sm", prefix )
-            mar += makeSpacers( spacer, "md", prefix )
-            mar += makeSpacers( spacer, "lg", prefix )
-            mar += makeSpacers( spacer, "xl", prefix )
+            spc += makeSpacers( spacer, "sm", prefix )
+            spc += makeSpacers( spacer, "md", prefix )
+            spc += makeSpacers( spacer, "lg", prefix )
+            spc += makeSpacers( spacer, "xl", prefix )
         }
     }
-    return mar
+    return spc
 }
 
 function makeSpacers( type: BreakPoints<Pos>, breakPoint: "sm" | "md" | "lg" | "xl", prefix: string ): string {
     let val: string = "";
-    val += type[breakPoint] && typeof type[breakPoint]! === typeOfSizes && type[breakPoint]! ? `${ breakPoint }__${ prefix }--${ type[breakPoint]! }` : "";
-    val += type[breakPoint] && type[breakPoint]!.top ? `${ breakPoint }__${ prefix }t--${ type[breakPoint]!.top }` : "";
-    val += type[breakPoint] && type[breakPoint]!.bottom ? `${ breakPoint }__${ prefix }b--${ type[breakPoint]!.bottom }` : "";
-    val += type[breakPoint] && type[breakPoint]!.left ? `${ breakPoint }__${ prefix }l--${ type[breakPoint]!.left }` : "";
-    val += type[breakPoint] && type[breakPoint]!.right ? `${ breakPoint }__${ prefix }r--${ type[breakPoint]!.right }` : "";
-    val += type[breakPoint] && type[breakPoint]!.x ? `${ breakPoint }__${ prefix }x--${ type[breakPoint]!.x }` : "";
-    val += type[breakPoint] && type[breakPoint]!.y ? `${ breakPoint }__${ prefix }y--${ type[breakPoint]!.y }` : "";
+    val += type[breakPoint] && typeof type[breakPoint]! === typeOfSizes && type[breakPoint]! ? ` ${ breakPoint }__${ prefix }--${ type[breakPoint]! }` : "";
+    val += type[breakPoint] && type[breakPoint]!.top ? ` ${ breakPoint }__${ prefix }t--${ type[breakPoint]!.top }` : "";
+    val += type[breakPoint] && type[breakPoint]!.bottom ? ` ${ breakPoint }__${ prefix }b--${ type[breakPoint]!.bottom }` : "";
+    val += type[breakPoint] && type[breakPoint]!.left ? ` ${ breakPoint }__${ prefix }l--${ type[breakPoint]!.left }` : "";
+    val += type[breakPoint] && type[breakPoint]!.right ? ` ${ breakPoint }__${ prefix }r--${ type[breakPoint]!.right }` : "";
+    val += type[breakPoint] && type[breakPoint]!.x ? ` ${ breakPoint }__${ prefix }x--${ type[breakPoint]!.x }` : "";
+    val += type[breakPoint] && type[breakPoint]!.y ? ` ${ breakPoint }__${ prefix }y--${ type[breakPoint]!.y }` : "";
     return val
 }
 
+
+export function createColumns( size?: number | BreakPoints<number> ): string {
+    let col: string = "";
+    if (size) {
+        if (typeof size === "number") {
+            col += `col--${ size }`
+        } else {
+            col += size.sm ? ` sm__col--${ size.sm }` : "";
+            col += size.md ? ` md__col--${ size.md }` : "";
+            col += size.lg ? ` md__col--${ size.lg }` : "";
+            col += size.xl ? ` xl__col--${ size.xl }` : "";
+        }
+    }
+    return col;
+}
 
 // interface setPaddingProps {
 //     p?: SizeWithBreak,

@@ -121,6 +121,18 @@ export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 //-------------------------------------------------------------------------------//
+// Grid
+//-------------------------------------------------------------------------------//
+export interface FlexRowProps {
+    margin?: BreakPoints<Pos>
+    padding?: BreakPoints<Pos>
+}
+export interface ColumnProps {
+    size?: number | BreakPoints<number>
+    margin?: BreakPoints<Pos>
+    padding?: BreakPoints<Pos>
+}
+//-------------------------------------------------------------------------------//
 // CSS Parallax Container
 //-------------------------------------------------------------------------------//
 export interface CSSParallaxContainerProps {
@@ -135,3 +147,4 @@ export interface CSSParallaxContainerProps {
     speed: number,
     repeat: "no-repeat" | "repeat" | "repeat-x" | "repeat-y"
 }
+

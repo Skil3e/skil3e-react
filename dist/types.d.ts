@@ -78,6 +78,15 @@ export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
     isOpen: boolean;
     intent?: Intents;
 }
+export interface FlexRowProps {
+    margin?: BreakPoints<Pos>;
+    padding?: BreakPoints<Pos>;
+}
+export interface ColumnProps {
+    size?: number | BreakPoints<number>;
+    margin?: BreakPoints<Pos>;
+    padding?: BreakPoints<Pos>;
+}
 export interface CSSParallaxContainerProps {
     backgroundColor: string;
     className: string;

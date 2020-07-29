@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react"
 
-interface ParallaxContainerProps {
+export interface CSSParallaxContainerProps {
     backgroundColor: string
     className: string
     image: string
@@ -13,9 +13,9 @@ interface ParallaxContainerProps {
     repeat: "no-repeat" | "repeat" | "repeat-x" | "repeat-y"
 }
 
-export default class extends React.Component<ParallaxContainerProps> {
+export default class extends React.Component<CSSParallaxContainerProps> {
     private node: HTMLDivElement | null | undefined;
-    constructor(props: ParallaxContainerProps) {
+    constructor(props: CSSParallaxContainerProps) {
         super(props);
     }
 

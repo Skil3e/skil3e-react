@@ -8,7 +8,7 @@
   "author": "Skil3e",
   "license": "MIT",
   "dependencies": {
-    "skil3e-css": "^2.0.90"
+    "skil3e-css": "^2.1.11"
   },
   "peerDependencies": {
     "react": "<=^16.13.1",

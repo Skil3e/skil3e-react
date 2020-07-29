@@ -123,11 +123,11 @@ export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
 //-------------------------------------------------------------------------------//
 // Grid
 //-------------------------------------------------------------------------------//
-export interface FlexRowProps {
+export interface FlexRowProps extends HTMLAttributes<HTMLDivElement> {
     margin?: BreakPoints<Pos>
     padding?: BreakPoints<Pos>
 }
-export interface ColumnProps {
+export interface ColumnProps extends HTMLAttributes<HTMLDivElement> {
     size?: number | BreakPoints<number>
     margin?: BreakPoints<Pos>
     padding?: BreakPoints<Pos>

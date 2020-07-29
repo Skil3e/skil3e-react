@@ -4,10 +4,10 @@ import { ColumnProps } from "../types";
 
 const Column = React.forwardRef(
     ( props: ColumnProps, ref?: React.Ref<HTMLDivElement> ) => {
-        const { margin, padding, size, ...rest } = props;
-        const className = joinIgnoreEmpty( "", createSpacers( margin, "m" ), createSpacers( padding, "p" ), createColumns( size ) );
+        const { margin, padding, size, className, ...rest } = props;
+        const ColumnClassName = joinIgnoreEmpty( "", className, (!size && "col"), createSpacers( margin, "m" ), createSpacers( padding, "p" ), createColumns( size ) );
         return (
-            <div { ...rest } ref={ ref } className={ className }/>
+            <div { ...rest } ref={ ref } className={ ColumnClassName }/>
         );
     },
 )

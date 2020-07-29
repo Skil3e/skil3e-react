@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
+import { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
 
 //-------------------------------------------------------------------------------//
 // General
@@ -118,4 +118,20 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
     isOpen: boolean
     intent?: Intents
+}
+
+//-------------------------------------------------------------------------------//
+// CSS Parallax Container
+//-------------------------------------------------------------------------------//
+export interface CSSParallaxContainerProps {
+    backgroundColor: string
+    className: string
+    image: string
+    bgSize: "cover" | "contain"
+    bgPos: string,
+    style:  CSSProperties
+    offset: number,
+    reverseDirection: boolean,
+    speed: number,
+    repeat: "no-repeat" | "repeat" | "repeat-x" | "repeat-y"
 }

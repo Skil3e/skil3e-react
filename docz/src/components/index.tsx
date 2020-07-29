@@ -12,5 +12,5 @@ export { default as Icon } from "./Icon/Icon";
 export type { IconProps } from './types';
 export { default as MenuToggle } from "./MenuToggle/MenuToggle";
 export { default as CSSParallax } from "./Parallax/CSSParallax";
-export type { CSSParallaxContainerProps } from "./Parallax/CSSParallax";
+export type { CSSParallaxContainerProps } from "./types";
 export type { MenuToggleProps } from './types';

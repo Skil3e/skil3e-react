@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
-export declare type Intents = 'primary' | 'accent' | 'success' | 'danger' | 'warning';
+import { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
+export declare type Intents = 'accent' | 'info' | 'success' | 'danger' | 'warning';
 export declare type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export interface BreakPoints<T> {
     sm?: T;
@@ -48,6 +48,7 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
 export interface SwitchProps {
     id: string;
     className?: string;
+    intent?: Intents;
     title?: string;
     onChange: () => void;
     checked: boolean;
@@ -76,5 +77,17 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
     isOpen: boolean;
     intent?: Intents;
+}
+export interface CSSParallaxContainerProps {
+    backgroundColor: string;
+    className: string;
+    image: string;
+    bgSize: "cover" | "contain";
+    bgPos: string;
+    style: CSSProperties;
+    offset: number;
+    reverseDirection: boolean;
+    speed: number;
+    repeat: "no-repeat" | "repeat" | "repeat-x" | "repeat-y";
 }
 export {};

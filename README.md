@@ -1,2 +1,2 @@
 # skil3e-react
-React components libraty
+React components library

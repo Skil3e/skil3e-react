@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { joinIgnoreEmpty } from "../utilities";
-import { Intents, Sizes } from "../types";
+import { LoaderProps, SvgAnimationProps } from "../types";
 
 const Loader: FunctionComponent<LoaderProps> =
     ( {type , intent , dur, size, className, stroke , container, containerClassName} ) => {
@@ -90,23 +90,5 @@ Loader.defaultProps = {
     container: true
 }
 
-interface LoaderProps {
-    type?: "cycle" | "pulse" | "flash",
-    intent?: Intents,
-    size?: Sizes,
-    dur?: number,
-    className?: string,
-    containerClassName?: string,
-    stroke?: boolean,
-    container?: boolean
-}
-
-interface SvgAnimationProps {
-    type?: string,
-    atr: string,
-    val: string,
-    delay?: string,
-    repeat?: string
-}
 
 export default Loader;

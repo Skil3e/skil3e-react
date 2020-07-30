@@ -16,6 +16,11 @@ export type { SwitchProps } from './types';
 export { default as Icon } from "./Icon/Icon";
 export type { IconProps } from './types';
 
+export { default as Loader } from "./Loader/Loader";
+export type { LoaderProps } from "./types"
+export type { SvgAnimationProps } from "./types"
+
+
 export { default as FlexRow } from "./Grid/FlexRow";
 export type { FlexRowProps } from './types'
 

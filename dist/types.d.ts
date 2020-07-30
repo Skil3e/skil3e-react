@@ -78,11 +78,11 @@ export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
     isOpen: boolean;
     intent?: Intents;
 }
-export interface FlexRowProps {
+export interface FlexRowProps extends HTMLAttributes<HTMLDivElement> {
     margin?: BreakPoints<Pos>;
     padding?: BreakPoints<Pos>;
 }
-export interface ColumnProps {
+export interface ColumnProps extends HTMLAttributes<HTMLDivElement> {
     size?: number | BreakPoints<number>;
     margin?: BreakPoints<Pos>;
     padding?: BreakPoints<Pos>;
@@ -98,5 +98,22 @@ export interface CSSParallaxContainerProps {
     reverseDirection: boolean;
     speed: number;
     repeat: "no-repeat" | "repeat" | "repeat-x" | "repeat-y";
+}
+export interface LoaderProps {
+    type?: "cycle" | "pulse" | "flash";
+    intent?: Intents;
+    size?: Sizes;
+    dur?: number;
+    className?: string;
+    containerClassName?: string;
+    stroke?: boolean;
+    container?: boolean;
+}
+export interface SvgAnimationProps {
+    type?: string;
+    atr: string;
+    val: string;
+    delay?: string;
+    repeat?: string;
 }
 export {};

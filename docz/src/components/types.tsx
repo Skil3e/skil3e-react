@@ -148,3 +148,21 @@ export interface CSSParallaxContainerProps {
     repeat: "no-repeat" | "repeat" | "repeat-x" | "repeat-y"
 }
 
+export interface LoaderProps {
+    type?: "cycle" | "pulse" | "flash",
+    intent?: Intents,
+    size?: Sizes,
+    dur?: number,
+    className?: string,
+    containerClassName?: string,
+    stroke?: boolean,
+    container?: boolean
+}
+
+export interface SvgAnimationProps {
+    type?: string,
+    atr: string,
+    val: string,
+    delay?: string,
+    repeat?: string
+}

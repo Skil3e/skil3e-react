@@ -4,6 +4,8 @@ export { default as InputWrapper } from "./Forms/InputWrapper";
 export type { InputWrapperProps } from './types';
 export { default as Input } from "./Forms/Input";
 export type { InputProps } from './types';
+export { default as PasswordInput } from "./Forms/PasswordInput";
+export type { PasswordInputProps } from './types';
 export { default as Select } from "./Forms/Select";
 export type { SelectProps } from './types';
 export { default as Switch } from "./Forms/Switch";

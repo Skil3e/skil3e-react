@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
+import { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, InputHTMLAttributes, ReactNode, SVGProps } from "react";
 
 //-------------------------------------------------------------------------------//
 // General
@@ -59,6 +59,15 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string
     errors?: any
     type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | "week"
+}
+
+export interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement> {
+    wrapperClassName?: string
+    toggleShowClassname?: string
+    label?: string
+    errors?: any
+    type?: 'text' | 'password'
+    customShowHide?: ( show: boolean ) => ReactNode | string
 }
 
 // Select
@@ -127,11 +136,13 @@ export interface FlexRowProps extends HTMLAttributes<HTMLDivElement> {
     margin?: BreakPoints<Pos>
     padding?: BreakPoints<Pos>
 }
+
 export interface ColumnProps extends HTMLAttributes<HTMLDivElement> {
     size?: number | BreakPoints<number>
     margin?: BreakPoints<Pos>
     padding?: BreakPoints<Pos>
 }
+
 //-------------------------------------------------------------------------------//
 // CSS Parallax Container
 //-------------------------------------------------------------------------------//
@@ -141,7 +152,7 @@ export interface CSSParallaxContainerProps {
     image: string
     bgSize: "cover" | "contain"
     bgPos: string,
-    style:  CSSProperties
+    style: CSSProperties
     offset: number,
     reverseDirection: boolean,
     speed: number,

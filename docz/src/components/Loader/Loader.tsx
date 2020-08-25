@@ -11,7 +11,7 @@ const Loader: FunctionComponent<LoaderProps> =
 
         const viewBox = "0 0 50 14";
         const duration = dur + "ms";
-        const ldrContainer = joinIgnoreEmpty( " ", ( container ? "loader-container d-flex justify-content-center py-5" : "loader-container d-inline-flex" ), ( containerClassName ? containerClassName : "" ) );
+        const ldrContainer = joinIgnoreEmpty( " ", ( container ? "loader-container flex--center-middle py-5" : "loader-container inline-flex" ), ( containerClassName ? containerClassName : "" ) );
 
         let width = "";
         if (size === 'xs') {

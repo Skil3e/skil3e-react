@@ -17,9 +17,9 @@ const PasswordInput = React.forwardRef(
             >
                 <div className={ "flex--center relative" }>
                     <input style={ { paddingRight: 60 } } { ...rest } ref={ ref } className={ "password-input" + (className ? " " + className : "") } type={ show ? "text" : "password" } id={ id }/>
-                    <button style={ { width: 60 } } className={ `absolute-y--center right--0 inline-flex al__it--center ${ !customShowHide ? "h--100" : "" }` + (toggleShowClassname ? ` ${ toggleShowClassname }` : "") } onClick={ () => setShow( !show ) }>
+                    <div style={ { width: 60 } } className={ `absolute-y--center right--0 inline-flex al__it--center cursor--pointer ${ !customShowHide ? "h--100" : "" }` + (toggleShowClassname ? ` ${ toggleShowClassname }` : "") } onClick={ () => setShow( !show ) }>
                         { customShowHide ? customShowHide( show ) : show ? "Hide" : "Show" }
-                    </button>
+                    </div>
                 </div>
 
             </InputWrapper>

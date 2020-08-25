@@ -7,6 +7,7 @@ route: /components/inputs
 import { Playground, Props } from 'docz'
 import InputWrapper from "./InputWrapper.tsx";
 import Input from "./Input.tsx";
+import Textarea from "./Textarea.tsx";
 import Select from "./Select.tsx";
 import Switch from "./Switch.tsx";
 import PasswordInput from "./PasswordInput.tsx"
@@ -30,16 +31,22 @@ An input component wrapped with the input wrapper.
 </Playground>
 
 ## Input Props
-All default React input props plus. 
+All default React input props plus.
 <Props of={Input} />
+
+## Textarea
+<Playground>
+  <Textarea id="test-textarea" name="textarea" errors={{input: {message: "There was an error"}}}/>
+</Playground>
+
 
 ## Select
 A select component wrapped with the input wrapper.
 <Playground>
-  <Select id="test-2" name="input" errors={{input: {message: "There was an error"}}} 
-  options={[ 
-      {value: "option-1"}, 
-      {value: "option-2", label: "My custom label"} 
+  <Select id="test-2" name="input" errors={{input: {message: "There was an error"}}}
+  options={[
+      {value: "option-1"},
+      {value: "option-2", label: "My custom label"}
   ]}
   />
 </Playground>

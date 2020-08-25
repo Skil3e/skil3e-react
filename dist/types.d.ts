@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, InputHTMLAttributes, ReactNode, SVGProps } from "react";
+import { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, InputHTMLAttributes, ReactNode, SVGProps, TextareaHTMLAttributes } from "react";
 export declare type Intents = 'accent' | 'info' | 'success' | 'danger' | 'warning';
 export declare type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export interface BreakPoints<T> {
@@ -34,6 +34,11 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     errors?: any;
     type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | "week";
+}
+export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+    wrapperClassName?: string;
+    label?: string;
+    errors?: any;
 }
 export interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string;

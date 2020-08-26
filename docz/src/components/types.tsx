@@ -32,7 +32,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     intent?: Intents
     size?: 'xs' | 'sm' | 'lg' | 'xl';
     fullwidth?: boolean
-    margin?: BreakPoints<Pos>
+    margin?: BreakPoints<Pos> | Pos
     // m?: SizeWithBreak
     // mt?: SizeWithBreak
     // mr?: SizeWithBreak

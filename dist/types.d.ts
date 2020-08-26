@@ -21,7 +21,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     intent?: Intents;
     size?: 'xs' | 'sm' | 'lg' | 'xl';
     fullwidth?: boolean;
-    margin?: BreakPoints<Pos>;
+    margin?: BreakPoints<Pos> | Pos;
 }
 export interface InputWrapperProps extends HTMLAttributes<HTMLDivElement> {
     inputID?: string;

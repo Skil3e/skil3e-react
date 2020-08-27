@@ -58,7 +58,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string
     label?: string
     errors?: any
-    type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | "week"
+    type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | 'week' | 'date'
 }
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     wrapperClassName?: string

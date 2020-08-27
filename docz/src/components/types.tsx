@@ -60,6 +60,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     errors?: any
     type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | 'week' | 'date'
 }
+
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     wrapperClassName?: string
     label?: string
@@ -89,7 +90,8 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
 }
 
 // Switch
-export interface SwitchProps {
+export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
+    switchSize?: Sizes
     id: string
     className?: string
     intent?: Intents
@@ -98,7 +100,6 @@ export interface SwitchProps {
     checked: boolean
     emoji?: string
     label?: string
-    size?: Sizes
 }
 
 //-------------------------------------------------------------------------------//

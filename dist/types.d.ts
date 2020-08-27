@@ -58,7 +58,8 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
     errors?: any;
     options: Option[];
 }
-export interface SwitchProps {
+export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
+    switchSize?: Sizes;
     id: string;
     className?: string;
     intent?: Intents;
@@ -67,7 +68,6 @@ export interface SwitchProps {
     checked: boolean;
     emoji?: string;
     label?: string;
-    size?: Sizes;
 }
 export declare type IconContent = {
     path: string;

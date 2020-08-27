@@ -4,7 +4,7 @@ import { IconProps } from "../types";
 
 const Icon = React.forwardRef(
     ( props: IconProps, ref?: React.Ref<SVGSVGElement> ) => {
-        const { icon, size = "sm", title, fill = "text" } = props;
+        const { icon, size = "sm", title, fill = "text", ...rest } = props;
         const className = joinIgnoreEmpty( "icon inline-flex al__it--center", `icon-${ icon.id }`, (fill ? `fill--${ fill }` : ""), props.className );
         let height: number;
 
@@ -23,7 +23,7 @@ const Icon = React.forwardRef(
         }
 
         return (
-            <svg { ...props }
+            <svg { ...rest }
                  ref={ ref }
                  className={ className }
                  xmlns="http://www.w3.org/2000/svg"

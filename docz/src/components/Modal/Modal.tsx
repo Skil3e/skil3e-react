@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from "react-dom";
 import { ModalProps, PortalProps } from "../types";
-
+import { joinIgnoreEmpty } from "../utilities";
 
 
 class Portal extends React.Component<PortalProps> {
@@ -35,7 +35,6 @@ class Portal extends React.Component<PortalProps> {
 }
 
 
-
 export default class Modal extends React.Component<ModalProps, { showModal: boolean }> {
     constructor( props: any ) {
         super( props );
@@ -65,8 +64,8 @@ export default class Modal extends React.Component<ModalProps, { showModal: bool
 
     render() {
         const classWrapper = (this.props.wrapperClassName ? " " + this.props.wrapperClassName : "");
-        const classModal = 'modal absolute-x--center p--md mt--xxl w--50 bg--bg' + (this.props.modalClassName ? " " + this.props.modalClassName : "");
-        const classTrigger = 'modal-trigger' + (this.props.triggerClassName ? " " + this.props.triggerClassName : "");
+        const classModal = joinIgnoreEmpty( 'modal absolute-x--center p--md mt--xxl w--50 bg--bg', this.props.modalClassName );
+        const classTrigger = joinIgnoreEmpty( 'modal-trigger', this.props.triggerClassName );
 
         const modal = this.state.showModal ? (
             <Portal className={ classWrapper } onClick={ this.handleHideOnClickOutside }>
@@ -78,7 +77,7 @@ export default class Modal extends React.Component<ModalProps, { showModal: bool
 
         return (
             <>
-                <div onClick={ this.handleShow } className={ 'inline-flex al__it--center' + (classTrigger ? classTrigger : "") }>
+                <div onClick={ this.handleShow } className={ classTrigger }>
                     { this.props.trigger }
                 </div>
                 { modal }

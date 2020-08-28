@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from "react-dom";
 import { ModalProps, PortalProps } from "../types";
 import { joinIgnoreEmpty } from "../utilities";
+import { FunctionComponent, useState } from "react";
 
 
 class Portal extends React.Component<PortalProps> {
@@ -34,54 +35,104 @@ class Portal extends React.Component<PortalProps> {
     }
 }
 
-
-export default class Modal extends React.Component<ModalProps, { showModal: boolean }> {
-    constructor( props: any ) {
-        super( props );
-        this.state = { showModal: false };
-        this.handleShow = this.handleShow.bind( this );
-        this.handleHide = this.handleHide.bind( this );
-        this.handleHideOnClickOutside = this.handleHideOnClickOutside.bind( this );
+const Modal: FunctionComponent<ModalProps> = (
+    {
+        children,
+        wrapperClassName,
+        modalClassName,
+        triggerClassName,
+        trigger,
     }
+) => {
 
-    handleShow() {
-        this.setState( { showModal: true } );
+    const classWrapper = (wrapperClassName ? " " + wrapperClassName : "");
+    const classModal = joinIgnoreEmpty( 'modal absolute-x--center p--md mt--xxl w--50 bg--bg', modalClassName );
+    const classTrigger = joinIgnoreEmpty( 'modal-trigger', triggerClassName );
+    const [ show, setShow ] = useState( false );
+
+    function handleShow() {
+        setShow( true );
         document.body.style.overflow = 'hidden';
     }
 
-    handleHide() {
-        this.setState( { showModal: false } );
+    function handleHide() {
+        setShow( false );
         document.body.style.overflow = "";
     }
 
-    handleHideOnClickOutside( e: any ) {
+    function handleHideOnClickOutside( e: any ) {
         let modal = document.getElementsByClassName( 'modal-wrapper' )[0];
         if (e.target === modal) {
-            this.setState( { showModal: false } );
+            setShow( false );
             document.body.style.overflow = "";
         }
     }
 
-    render() {
-        const classWrapper = (this.props.wrapperClassName ? " " + this.props.wrapperClassName : "");
-        const classModal = joinIgnoreEmpty( 'modal absolute-x--center p--md mt--xxl w--50 bg--bg', this.props.modalClassName );
-        const classTrigger = joinIgnoreEmpty( 'modal-trigger', this.props.triggerClassName );
-
-        const modal = this.state.showModal ? (
-            <Portal className={ classWrapper } onClick={ this.handleHideOnClickOutside }>
-                <div className={ classModal }>
-                    { this.props.children }
-                </div>
-            </Portal>
-        ) : null;
-
-        return (
-            <>
-                <div onClick={ this.handleShow } className={ classTrigger }>
-                    { this.props.trigger }
-                </div>
-                { modal }
-            </>
-        );
-    }
+    const modal = show ? (
+        <Portal className={ classWrapper } onClick={ handleHideOnClickOutside }>
+            <div className={ classModal }>
+                { children( { show, setShow } ) }
+            </div>
+        </Portal>
+    ) : null;
+    return (
+        <>
+            <div onClick={ handleShow } className={ classTrigger }>
+                { trigger( { show, setShow } ) }
+            </div>
+            { modal }
+        </>
+    )
 }
+export default Modal
+// export default class Modal extends React.Component<ModalProps, { showModal: boolean }> {
+//     constructor( props: any ) {
+//         super( props );
+//         this.state = { showModal: false };
+//         this.handleShow = this.handleShow.bind( this );
+//         this.handleHide = this.handleHide.bind( this );
+//         this.handleHideOnClickOutside = this.handleHideOnClickOutside.bind( this );
+//     }
+//
+//     handleShow() {
+//         this.setState( { showModal: true } );
+//         document.body.style.overflow = 'hidden';
+//     }
+//
+//     handleHide() {
+//         this.setState( { showModal: false } );
+//         document.body.style.overflow = "";
+//     }
+//
+//     handleHideOnClickOutside( e: any ) {
+//         let modal = document.getElementsByClassName( 'modal-wrapper' )[0];
+//         if (e.target === modal) {
+//             this.setState( { showModal: false } );
+//             document.body.style.overflow = "";
+//         }
+//     }
+//
+//     render() {
+//         const classWrapper = (this.props.wrapperClassName ? " " + this.props.wrapperClassName : "");
+//         const classModal = joinIgnoreEmpty( 'modal absolute-x--center p--md mt--xxl w--50 bg--bg', this.props.modalClassName );
+//         const classTrigger = joinIgnoreEmpty( 'modal-trigger', this.props.triggerClassName );
+//
+//         const modal = this.state.showModal ? (
+//             <Portal className={ classWrapper } onClick={ this.handleHideOnClickOutside }>
+//                 <div className={ classModal }>
+//                     { this.handleHide }
+//                     { this.props.children }
+//                 </div>
+//             </Portal>
+//         ) : null;
+//
+//         return (
+//             <>
+//                 <div onClick={ this.handleShow } className={ classTrigger }>
+//                     { this.props.trigger }
+//                 </div>
+//                 { modal }
+//             </>
+//         );
+//     }
+// }

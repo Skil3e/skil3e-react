@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, InputHTMLAttributes, ReactNode, SVGProps, TextareaHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, CSSProperties, Dispatch, HTMLAttributes, InputHTMLAttributes, ReactNode, SetStateAction, SVGProps, TextareaHTMLAttributes } from "react";
 
 //-------------------------------------------------------------------------------//
 // General
@@ -157,11 +157,17 @@ export interface PortalProps {
     onClick: ( e: any ) => void
 }
 
+interface childrenWithProps {
+    show: boolean
+    setShow: Dispatch<SetStateAction<boolean>>
+}
+
 export interface ModalProps {
+    children: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
     wrapperClassName?: string
     modalClassName?: string
     triggerClassName?: string
-    trigger: ReactNode
+    trigger: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
 }
 
 //-------------------------------------------------------------------------------//

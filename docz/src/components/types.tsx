@@ -150,6 +150,21 @@ export interface ColumnProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 //-------------------------------------------------------------------------------//
+// Modal
+//-------------------------------------------------------------------------------//
+export interface PortalProps {
+    className: string
+    onClick: ( e: any ) => void
+}
+
+export interface ModalProps {
+    wrapperClassName?: string
+    modalClassName?: string
+    triggerClassName?: string
+    trigger: ReactNode
+}
+
+//-------------------------------------------------------------------------------//
 // CSS Parallax Container
 //-------------------------------------------------------------------------------//
 export interface CSSParallaxContainerProps {

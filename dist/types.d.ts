@@ -100,6 +100,16 @@ export interface ColumnProps extends HTMLAttributes<HTMLDivElement> {
     margin?: BreakPoints<Pos>;
     padding?: BreakPoints<Pos>;
 }
+export interface PortalProps {
+    className: string;
+    onClick: (e: any) => void;
+}
+export interface ModalProps {
+    wrapperClassName?: string;
+    modalClassName?: string;
+    triggerClassName?: string;
+    trigger: ReactNode;
+}
 export interface CSSParallaxContainerProps {
     backgroundColor: string;
     className: string;

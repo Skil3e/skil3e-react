@@ -26,6 +26,8 @@ export { default as Loader } from "./Loader/Loader";
 export type { LoaderProps } from "./types"
 export type { SvgAnimationProps } from "./types"
 
+export {default as Modal} from "./Modal/Modal"
+export type {ModalProps} from "./types"
 
 export { default as FlexRow } from "./Grid/FlexRow";
 export type { FlexRowProps } from './types'

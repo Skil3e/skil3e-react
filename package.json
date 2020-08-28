@@ -1,6 +1,6 @@
 {
   "name": "skil3e-react",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "React components library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -14,26 +14,26 @@
   "author": "Skil3e",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
-    "@types/react": "^16.9.43",
+    "@types/react": "^16.9.48",
     "@types/react-dom": "^16.9.8",
     "mkdirp": "^1.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.21.0",
+    "rollup": "^2.26.6",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-ignore": "^1.0.6",
+    "rollup-plugin-ignore": "^1.0.9",
     "rollup-plugin-peer-deps-external": "^2.2.3",
     "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "typescript": "^3.9.6"
+    "rollup-plugin-typescript2": "^0.27.2",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "skil3e-css": "^2.1.14"

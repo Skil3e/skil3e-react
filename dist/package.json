@@ -1,6 +1,6 @@
 {
   "name": "skil3e-react",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "React components library",
   "main": "index.cjs.js",
   "module": "index.esm.js",
@@ -8,7 +8,7 @@
   "author": "Skil3e",
   "license": "MIT",
   "dependencies": {
-    "skil3e-css": "^2.1.14"
+    "skil3e-css": "^2.1.15"
   },
   "peerDependencies": {
     "react": "<=^16.13.1",

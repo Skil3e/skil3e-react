@@ -27,3 +27,4 @@ export { default as MenuToggle } from "./MenuToggle/MenuToggle";
 export type { MenuToggleProps } from './types';
 export { default as CSSParallax } from "./Parallax/CSSParallax";
 export type { CSSParallaxContainerProps } from "./types";
+export { joinIgnoreEmpty, createLabel } from "./utilities";

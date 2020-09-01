@@ -1,13 +1,15 @@
 import * as React from "react";
 import { FunctionComponent, memo, ReactNode } from "react";
 import { motion } from "framer-motion";
-import { joinStr } from "../utilities";
+import { convertDate, joinStr } from "../utilities";
 
 export type TimelineItem = {
     id: number
     title: string
     desc: string
-    date: string
+    from: string
+    to: string
+    isCurrent: boolean
     responsibilities?: string[] | string
 }
 
@@ -16,7 +18,7 @@ export interface TimelineProps {
     className?: string
     isMobile?: boolean
     inView?: boolean
-    renderedItem: ( item: TimelineItem ) => JSX.Element | ReactNode
+    renderedItem?: ( item: TimelineItem ) => JSX.Element | ReactNode
 }
 
 const Timeline: FunctionComponent<TimelineProps> = memo( ( { items, className, isMobile, inView, renderedItem } ) => {
@@ -43,7 +45,7 @@ const Timeline: FunctionComponent<TimelineProps> = memo( ( { items, className, i
                     >
                         { renderedItem ? renderedItem( item ) :
                             <div className={ "p--lg brd brd--border round" }>
-                                { item.date && <small className={ "text--textDimmed" }>{ item.date }</small> }
+                                { item.from && item.to && <small className={ "text--textDimmed" }>From { convertDate( item.from ) } till { item.isCurrent ? item.to : convertDate( item.to ) }</small> }
                                 { item.title && <h3 className={ "h4 my--xs font--bold" }>{ item.title }</h3> }
                                 { item.desc && <p className={ "m--0 text--textDimmed" }>{ item.desc }</p> }
                             </div>

@@ -21,6 +21,15 @@ export const createLabel = ( name: string, operator: string = "-" ) => {
     const addSpace = name.split( operator ).join( " " );
     return addSpace.charAt( 0 ).toUpperCase() + addSpace.substring( 1 ).toLowerCase();
 }
+//-------------------------------------------------------------------------------//
+// Create Date
+//-------------------------------------------------------------------------------//
+export function convertDate( date: string ) {
+    const d = new Date( date )
+    const month = d.toLocaleString( 'default', { month: 'short' } )
+    const year = d.getFullYear()
+    return `${ month } ${ year }`
+}
 
 //-------------------------------------------------------------------------------//
 // useInterval

@@ -3,7 +3,9 @@ export declare type TimelineItem = {
     id: number;
     title: string;
     desc: string;
-    date: string;
+    from: string;
+    to: string;
+    isCurrent: boolean;
     responsibilities?: string[] | string;
 };
 export interface TimelineProps {
@@ -11,7 +13,7 @@ export interface TimelineProps {
     className?: string;
     isMobile?: boolean;
     inView?: boolean;
-    renderedItem: (item: TimelineItem) => JSX.Element | ReactNode;
+    renderedItem?: (item: TimelineItem) => JSX.Element | ReactNode;
 }
 declare const Timeline: FunctionComponent<TimelineProps>;
 export default Timeline;

@@ -1,7 +1,13 @@
 import * as React from "react";
 import { createLabel } from "../utilities";
 import InputWrapper from "./InputWrapper";
-import { TextareaProps } from "../types";
+import { TextareaHTMLAttributes } from "react";
+
+export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+    wrapperClassName?: string
+    label?: string
+    errors?: any
+}
 
 const Textarea = React.forwardRef(
     ( props: TextareaProps, ref?: React.Ref<HTMLTextAreaElement> ) => {

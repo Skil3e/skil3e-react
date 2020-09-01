@@ -1,9 +1,25 @@
 import * as React from 'react';
 import * as ReactDOM from "react-dom";
-import { ModalProps, PortalProps } from "../types";
 import { joinIgnoreEmpty } from "../utilities";
-import { FunctionComponent, useState } from "react";
+import { Dispatch, FunctionComponent, ReactNode, SetStateAction, useState } from "react";
 
+export interface PortalProps {
+    className: string
+    onClick: ( e: any ) => void
+}
+
+interface childrenWithProps {
+    show: boolean
+    setShow: Dispatch<SetStateAction<boolean>>
+}
+
+export interface ModalProps {
+    children: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
+    wrapperClassName?: string
+    modalClassName?: string
+    triggerClassName?: string
+    trigger: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
+}
 
 class Portal extends React.Component<PortalProps> {
     private readonly modalWrapper: HTMLDivElement;

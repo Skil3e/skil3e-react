@@ -1,10 +1,15 @@
-import { BreakPoints, Pos} from "./types";
+import { BreakPoints, Pos } from "./types";
+import { useEffect, useRef } from "react";
 
 const typeOfSizes = typeof 'xs' || 'sm' || 'md' || 'lg' || 'xl';
 
 //-------------------------------------------------------------------------------//
 // String Join
 //-------------------------------------------------------------------------------//
+export function joinStr( name?: string ) {
+    return name ? ` ${ name }` : "";
+}
+
 export const joinIgnoreEmpty = ( ...strings: any ) => {
     return strings.filter( Boolean ).join( " " );
 }
@@ -15,6 +20,30 @@ export const joinIgnoreEmpty = ( ...strings: any ) => {
 export const createLabel = ( name: string, operator: string = "-" ) => {
     const addSpace = name.split( operator ).join( " " );
     return addSpace.charAt( 0 ).toUpperCase() + addSpace.substring( 1 ).toLowerCase();
+}
+
+//-------------------------------------------------------------------------------//
+// useInterval
+//-------------------------------------------------------------------------------//
+export function useInterval( callback: () => void, delay: number ) {
+    const savedCallback = useRef( () => {
+    } );
+    // Remember the latest callback.
+    useEffect( () => {
+        savedCallback.current = callback;
+    }, [ callback ] );
+
+    // Set up the interval.
+    useEffect( () => {
+        function tick() {
+            savedCallback.current();
+        }
+
+        if (delay !== null) {
+            let id = setInterval( tick, delay );
+            return () => clearInterval( id );
+        }
+    }, [ delay ] );
 }
 
 //-------------------------------------------------------------------------------//

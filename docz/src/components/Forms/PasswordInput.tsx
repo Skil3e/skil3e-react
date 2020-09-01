@@ -1,8 +1,16 @@
 import * as React from "react";
 import { createLabel } from "../utilities";
 import InputWrapper from "./InputWrapper";
-import { PasswordInputProps } from "../types";
-import { useState } from "react";
+import { InputHTMLAttributes, ReactNode, useState } from "react";
+
+export interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement> {
+    wrapperClassName?: string
+    toggleShowClassname?: string
+    label?: string
+    errors?: any
+    type?: 'text' | 'password'
+    customShowHide?: ( show: boolean ) => ReactNode | string
+}
 
 const PasswordInput = React.forwardRef(
     ( props: PasswordInputProps, ref?: React.Ref<HTMLInputElement> ) => {

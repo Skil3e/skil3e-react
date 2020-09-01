@@ -1,6 +1,6 @@
 {
   "name": "skil3e-react",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "React components library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -35,12 +35,11 @@
     "rollup-plugin-typescript2": "^0.27.2",
     "typescript": "^3.9.7"
   },
-  "dependencies": {
-    "skil3e-css": "^2.1.17"
-  },
   "peerDependencies": {
     "react": "<=^16.13.1",
     "react-dom": "<=^16.13.1",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "skil3e-css": "^2.1.17",
+    "framer-motion": "2.6.5"
   }
 }

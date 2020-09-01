@@ -1,6 +1,19 @@
 import * as React from "react";
-import { SwitchProps } from "../types";
+import { Intents, Sizes } from "../types";
 import { joinIgnoreEmpty } from "../utilities";
+import { InputHTMLAttributes } from "react";
+
+export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
+    switchSize?: Sizes
+    id: string
+    className?: string
+    intent?: Intents
+    title?: string
+    onChange: () => void
+    checked: boolean
+    emoji?: string
+    label?: string
+}
 
 const Switch = React.forwardRef(
     ( props: SwitchProps, ref?: React.Ref<HTMLInputElement> ) => {

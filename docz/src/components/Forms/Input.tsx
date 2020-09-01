@@ -1,7 +1,14 @@
 import * as React from "react";
 import { createLabel } from "../utilities";
 import InputWrapper from "./InputWrapper";
-import { InputProps } from "../types";
+import { InputHTMLAttributes } from "react";
+
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+    wrapperClassName?: string
+    label?: string
+    errors?: any
+    type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | 'week' | 'date'
+}
 
 const Input = React.forwardRef(
     ( props: InputProps, ref?: React.Ref<HTMLInputElement> ) => {

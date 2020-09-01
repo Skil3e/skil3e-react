@@ -1,7 +1,26 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { joinIgnoreEmpty } from "../utilities";
-import { LoaderProps, SvgAnimationProps } from "../types";
+import { Intents, Sizes } from "../types";
+
+export interface LoaderProps {
+    type?: "cycle" | "pulse" | "flash",
+    intent?: Intents,
+    size?: Sizes,
+    dur?: number,
+    className?: string,
+    containerClassName?: string,
+    stroke?: boolean,
+    container?: boolean
+}
+
+export interface SvgAnimationProps {
+    type?: string,
+    atr: string,
+    val: string,
+    delay?: string,
+    repeat?: string
+}
 
 const Loader: FunctionComponent<LoaderProps> =
     ( {type , intent , dur, size, className, stroke , container, containerClassName} ) => {

@@ -1,6 +1,15 @@
 import * as React from "react";
 import { joinIgnoreEmpty, createSpacers } from "../utilities";
-import { ButtonProps } from "../types";
+import { BreakPoints, Intents, Pos } from "../types";
+import { ButtonHTMLAttributes } from "react";
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    look?: "fill" | "minimal" | "link" | "outline"
+    intent?: Intents
+    size?: 'xs' | 'sm' | 'lg' | 'xl';
+    fullwidth?: boolean
+    margin?: BreakPoints<Pos> | Pos
+}
 
 const Button = React.forwardRef(
     ( props: ButtonProps, ref?: React.Ref<HTMLButtonElement> ) => {

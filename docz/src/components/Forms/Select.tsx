@@ -1,7 +1,19 @@
 import * as React from "react";
 import { createLabel } from "../utilities";
 import InputWrapper from "./InputWrapper";
-import { SelectProps } from "../types";
+import { InputHTMLAttributes } from "react";
+
+type Option = {
+    value: string | number
+    label?: string
+}
+
+export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
+    wrapperClassName?: string
+    label?: string
+    errors?: any
+    options: Option[]
+}
 
 const Select = React.forwardRef(
     ( props: SelectProps, ref?: React.Ref<HTMLSelectElement> ) => {

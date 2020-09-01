@@ -1,6 +1,28 @@
 import * as React from "react";
 import { joinIgnoreEmpty } from "../utilities";
-import { IconProps } from "../types";
+import { Intents, Sizes } from "../types";
+import { SVGProps } from "react";
+
+export type IconContent = {
+    path: string
+    fill: string
+}
+
+export interface IconsProps {
+    id: string,
+    viewBox: string,
+    path?: string
+    content?: IconContent[]
+}
+
+export interface IconProps extends SVGProps<SVGSVGElement> {
+    icon: IconsProps,
+    className?: string,
+    height?: number,
+    size?: Sizes | number,
+    fill?: Intents,
+    title?: string
+}
 
 const Icon = React.forwardRef(
     ( props: IconProps, ref?: React.Ref<SVGSVGElement> ) => {

@@ -1,6 +1,12 @@
 import * as React from "react";
 import { joinIgnoreEmpty } from "../utilities";
-import { MenuToggleProps } from "../types";
+import { Intents } from "../types";
+import { HTMLAttributes } from "react";
+
+export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
+    isOpen: boolean
+    intent?: Intents
+}
 
 const MenuToggle = React.forwardRef(
     ( props: MenuToggleProps, ref?: React.Ref<HTMLDivElement> ) => {

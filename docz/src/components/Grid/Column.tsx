@@ -1,6 +1,13 @@
 import * as React from "react";
 import { joinIgnoreEmpty, createSpacers, createColumns } from "../utilities";
-import { ColumnProps } from "../types";
+import { BreakPoints, Pos } from "../types";
+import { HTMLAttributes } from "react";
+
+export interface ColumnProps extends HTMLAttributes<HTMLDivElement> {
+    size?: number | BreakPoints<number>
+    margin?: BreakPoints<Pos>
+    padding?: BreakPoints<Pos>
+}
 
 const Column = React.forwardRef(
     ( props: ColumnProps, ref?: React.Ref<HTMLDivElement> ) => {

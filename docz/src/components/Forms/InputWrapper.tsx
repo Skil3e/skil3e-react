@@ -1,6 +1,13 @@
 import * as React from "react";
 import { joinIgnoreEmpty } from "../utilities";
-import { InputWrapperProps } from "../types";
+import { HTMLAttributes } from "react";
+
+export interface InputWrapperProps extends HTMLAttributes<HTMLDivElement> {
+    inputID?: string
+    name?: string
+    label?: string
+    errors?: any
+}
 
 const InputWrapper = React.forwardRef(
     ( props: InputWrapperProps, ref?: React.Ref<HTMLDivElement> ) => {

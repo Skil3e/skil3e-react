@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FunctionComponent, memo } from "react";
+import { FunctionComponent, memo, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { joinStr } from "../utilities";
 import Counter from "./Counter";
@@ -11,8 +11,8 @@ export interface CircleProgressBarProps {
     counterClassName?: string
     width?: number
     inView?: boolean
-    icon?: string
     color?: string
+    icon?: ( width: number, percentage: number, title?: string ) => JSX.Element | ReactNode
 }
 
 const CircleProgressBar: FunctionComponent<CircleProgressBarProps> = memo( ( { percentage, showPercentage, title, counterClassName, width, inView, icon, color } ) => {
@@ -57,7 +57,7 @@ const CircleProgressBar: FunctionComponent<CircleProgressBarProps> = memo( ( { p
                 <div className={ "absolute--center text--center w--100" }>
                     { !icon && showPercentage && <Counter className={ joinStr( counterClassName ) } inView={ inView } valueTo={ percentage }/> }
                     { !icon && title && <div className={ "font--bold pt--md" }>{ title }</div> }
-                    { icon && <img src={ icon } width={ Math.round( width! / 1.9 ) } alt={ title } title={ title + " " +  percentage + "%"}/> }
+                    { icon && icon( width!, percentage, title ) }
                 </div>
             </div>
             { icon && title && <div style={ { marginTop: -10 } } className={ "font--bold" }>{ title }</div> }
@@ -67,9 +67,9 @@ const CircleProgressBar: FunctionComponent<CircleProgressBarProps> = memo( ( { p
 
 CircleProgressBar.defaultProps = {
     showPercentage: false,
-    width: 200,
-    inView: true,
-    color: "var(--accent)"
+    width         : 200,
+    inView        : true,
+    color         : "var(--accent)"
 }
 
 export default CircleProgressBar

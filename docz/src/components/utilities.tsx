@@ -6,7 +6,7 @@ const typeOfSizes = typeof 'xs' || 'sm' || 'md' || 'lg' || 'xl';
 //-------------------------------------------------------------------------------//
 // Screen Checker
 //-------------------------------------------------------------------------------//
-export const CheckForScreens = () => {
+export const useCheckForScreens = () => {
     const [ isMobile, setIsMobile ] = useState( false );
     const [ screen, setScreen ] = useState( "" );
 
@@ -45,7 +45,7 @@ export const CheckForScreens = () => {
 //-------------------------------------------------------------------------------//
 // Theme Changer
 //-------------------------------------------------------------------------------//
-export const ThemeChanger = () => {
+export const useThemeChanger = () => {
     const [ theme, setTheme ] = useState( "" );
 
     useEffect( () => {

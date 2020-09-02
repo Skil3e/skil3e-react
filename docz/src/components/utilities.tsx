@@ -1,8 +1,67 @@
 import { BreakPoints, Pos } from "./types";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const typeOfSizes = typeof 'xs' || 'sm' || 'md' || 'lg' || 'xl';
 
+//-------------------------------------------------------------------------------//
+// Screen Checker
+//-------------------------------------------------------------------------------//
+export const CheckForScreens = () => {
+    const [ isMobile, setIsMobile ] = useState( false );
+    const [ screen, setScreen ] = useState( "" );
+
+    function checker() {
+        const phone = 480;
+        const tablet = 860;
+        const laptop = 992;
+        const desktop = 1200;
+        let windowWidth = document.documentElement.clientWidth;
+        if (windowWidth < phone) {
+            setIsMobile( true );
+            setScreen( 'phone' );
+        } else if (windowWidth <= tablet) {
+            setIsMobile( true );
+            setScreen( 'tablet' )
+        } else if (windowWidth < laptop) {
+            setIsMobile( false );
+            setScreen( 'laptop' )
+        } else if (windowWidth >= desktop) {
+            setIsMobile( false );
+            setScreen( 'desktop' )
+        }
+    }
+
+    useEffect( () => {
+        checker();
+        window.addEventListener( 'resize', checker );
+        return () => {
+            checker();
+            window.removeEventListener( 'resize', checker );
+        };
+    } );
+
+    return [ isMobile, screen ]
+};
+//-------------------------------------------------------------------------------//
+// Theme Changer
+//-------------------------------------------------------------------------------//
+export const ThemeChanger = () => {
+    const [ theme, setTheme ] = useState( "" );
+
+    useEffect( () => {
+        let currentTheme = localStorage.getItem( "currentTheme" );
+        if (!currentTheme) {
+            if (window.matchMedia && window.matchMedia( '(prefers-color-scheme: dark)' ).matches) {
+                currentTheme = "dark";
+            } else {
+                currentTheme = "light";
+            }
+        }
+        setTheme( currentTheme )
+    }, [] )
+
+    return [ theme, setTheme ]
+}
 //-------------------------------------------------------------------------------//
 // String Join
 //-------------------------------------------------------------------------------//
@@ -21,6 +80,7 @@ export const createLabel = ( name: string, operator: string = "-" ) => {
     const addSpace = name.split( operator ).join( " " );
     return addSpace.charAt( 0 ).toUpperCase() + addSpace.substring( 1 ).toLowerCase();
 }
+
 //-------------------------------------------------------------------------------//
 // Create Date
 //-------------------------------------------------------------------------------//
@@ -110,61 +170,6 @@ export function createColumns( size?: number | BreakPoints<number> ): string {
     }
     return col;
 }
-
-// interface setPaddingProps {
-//     p?: SizeWithBreak,
-//     pt?: SizeWithBreak,
-//     pb?: SizeWithBreak,
-//     pl?: SizeWithBreak,
-//     pr?: SizeWithBreak,
-//     px?: SizeWithBreak,
-//     py?: SizeWithBreak
-// }
-// export function setPadding( { p, pt, pb, pl, pr, px, py }: setPaddingProps ) {
-//     let margin: string = "";
-//     margin += createBreakpointVars( p, "p--" )
-//     margin += createBreakpointVars( pt, "pt--" )
-//     margin += createBreakpointVars( pb, "pb--" )
-//     margin += createBreakpointVars( pl, "pl--" )
-//     margin += createBreakpointVars( pr, "pr--" )
-//     margin += createBreakpointVars( px, "px--" )
-//     margin += createBreakpointVars( py, "py--" )
-//     return margin;
-// }
-//
-// interface setMarginProps {
-//     m?: SizeWithBreak,
-//     mt?: SizeWithBreak,
-//     mb?: SizeWithBreak,
-//     ml?: SizeWithBreak,
-//     mr?: SizeWithBreak,
-//     mx?: SizeWithBreak,
-//     my?: SizeWithBreak
-// }
-// export function setMargin( { m, mt, mb, ml, mr, mx, my }: setMarginProps ) {
-//     let margin: string = "";
-//     margin += createBreakpointVars( m, "m--" )
-//     margin += createBreakpointVars( mt, "mt--" )
-//     margin += createBreakpointVars( mb, "mb--" )
-//     margin += createBreakpointVars( ml, "ml--" )
-//     margin += createBreakpointVars( mr, "mr--" )
-//     margin += createBreakpointVars( mx, "mx--" )
-//     margin += createBreakpointVars( my, "my--" )
-//     return margin;
-// }
-//
-// function createBreakpointVars( variable?: SizeWithBreak, prefix?: string ) {
-//     let util: string = "";
-//     if (typeof variable === "string") {
-//         util += (variable ? `${ prefix + variable }` : "")
-//     } else if (typeof variable === "object") {
-//         util += (variable.sm ? ` ${ prefix + variable.sm }` : "")
-//         util += (variable.md ? ` md__${ prefix + variable.md }` : "")
-//         util += (variable.lg ? ` lg__${ prefix + variable.lg }` : "")
-//         util += (variable.xl ? ` xl__${ prefix + variable.xl }` : "")
-//     }
-//     return util;
-// }
 
 
 

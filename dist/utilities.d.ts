@@ -1,6 +1,7 @@
 import { BreakPoints, Pos } from "./types";
-export declare const useCheckForScreens: () => (string | boolean)[];
-export declare const useThemeChanger: () => (string | import("react").Dispatch<import("react").SetStateAction<string>>)[];
+import { Dispatch, SetStateAction } from "react";
+export declare const useCheckForScreens: () => [boolean, string];
+export declare const useThemeChanger: () => [string, Dispatch<SetStateAction<string>>];
 export declare function joinStr(name?: string): string;
 export declare const joinIgnoreEmpty: (...strings: any) => any;
 export declare const createLabel: (name: string, operator?: string) => string;

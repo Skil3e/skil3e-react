@@ -1,12 +1,12 @@
 import { BreakPoints, Pos } from "./types";
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 const typeOfSizes = typeof 'xs' || 'sm' || 'md' || 'lg' || 'xl';
 
 //-------------------------------------------------------------------------------//
 // Screen Checker
 //-------------------------------------------------------------------------------//
-export const useCheckForScreens = () => {
+export const useCheckForScreens = () : [boolean, string] => {
     const [ isMobile, setIsMobile ] = useState( false );
     const [ screen, setScreen ] = useState( "" );
 
@@ -45,7 +45,7 @@ export const useCheckForScreens = () => {
 //-------------------------------------------------------------------------------//
 // Theme Changer
 //-------------------------------------------------------------------------------//
-export const useThemeChanger = () => {
+export const useThemeChanger = () : [string, Dispatch<SetStateAction<string>>] => {
     const [ theme, setTheme ] = useState( "" );
 
     useEffect( () => {

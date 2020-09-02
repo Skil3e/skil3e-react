@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { convertDate, joinStr } from "../utilities";
 
 export type TimelineItem = {
-    id: number
+    order: number
     title: string
-    desc: string
+    desc?: string
     from: string
     to: string
     isCurrent: boolean
@@ -39,7 +39,7 @@ const Timeline: FunctionComponent<TimelineProps> = memo( ( { items, className, i
 
                 { items.map( ( item, i ) =>
                     <motion.div
-                        key={ item.id }
+                        key={ item.order }
                         className={ `timeline__item relative my--lg md__w--50 ${ !isMobile ? (i % 2 == 0 ? "text--right pr--xl" : "text--left ml--auto pl--xl") : "text--left ml--auto pl--xl" }` }
                         variants={ TimelineItemVariants }
                     >

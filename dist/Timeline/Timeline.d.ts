@@ -1,8 +1,8 @@
 import { FunctionComponent, ReactNode } from "react";
 export declare type TimelineItem = {
-    id: number;
+    order: number;
     title: string;
-    desc: string;
+    desc?: string;
     from: string;
     to: string;
     isCurrent: boolean;

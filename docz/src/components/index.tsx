@@ -39,11 +39,15 @@ export type { MenuToggleProps } from "./MenuToggle/MenuToggle";
 
 export { default as CircleProgressBar } from "./CircleProgressBar/CircleProgressBar"
 export type { CircleProgressBarProps } from "./CircleProgressBar/CircleProgressBar"
+
 export { default as Counter } from "./CircleProgressBar/Counter"
 export type { CounterProps } from "./CircleProgressBar/Counter"
 
 export { default as CSSParallax } from "./Parallax/CSSParallax";
 export type { CSSParallaxContainerProps } from "./Parallax/CSSParallax";
+
+export { default as ParallaxContainer } from "./Parallax/ParallaxContainer";
+export type { ParallaxContainerProps } from "./Parallax/ParallaxContainer";
 
 export {default as Timeline} from "./Timeline/Timeline"
 export type {TimelineItem, TimelineProps} from "./Timeline/Timeline"

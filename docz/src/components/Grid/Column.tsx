@@ -5,8 +5,8 @@ import { HTMLAttributes } from "react";
 
 export interface ColumnProps extends HTMLAttributes<HTMLDivElement> {
     size?: number | BreakPoints<number>
-    margin?: BreakPoints<Pos>
-    padding?: BreakPoints<Pos>
+    margin?: BreakPoints<Pos> | Pos
+    padding?: BreakPoints<Pos> | Pos
 }
 
 const Column = React.forwardRef(

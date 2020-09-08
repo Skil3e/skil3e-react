@@ -32,7 +32,7 @@ const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { c
         <motion.div className={ className } ref={ ref }
                     style={ {
                         y,
-                        opacity: useOpacity ? opacity : undefined
+                        opacity: useOpacity ? opacity : 1
                     } }>
             { children }
         </motion.div>

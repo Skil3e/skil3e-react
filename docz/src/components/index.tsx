@@ -54,4 +54,4 @@ export type {TimelineItem, TimelineProps} from "./Timeline/Timeline"
 
 export type {BreakPoints, Intents, Pos, Sizes} from "./types"
 
-export { joinIgnoreEmpty, joinStr, createLabel, useInterval, convertDate, useCheckForScreens, useThemeChanger } from "./utilities"
+export { joinIgnoreEmpty, joinStr, createLabel, useInterval, convertDate, useCheckForScreens, useThemeChanger, createColumns, createSpacers } from "./utilities"

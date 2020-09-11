@@ -7,18 +7,20 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string
     label?: string
     errors?: any
+    customErrors?: any
     type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | 'week' | 'date'
 }
 
 const Input = React.forwardRef(
     ( props: InputProps, ref?: React.Ref<HTMLInputElement> ) => {
-        const { type, id, label, errors, className, wrapperClassName, ...rest } = props
+        const { type, id, label, errors,customErrors, className, wrapperClassName, ...rest } = props
         return (
             <InputWrapper className={ wrapperClassName }
                           inputID={ id }
                           name={ props.name }
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
+                          customErrors={customErrors}
             >
                 <input { ...rest } ref={ ref } className={ className } type={ type } id={ id } />
             </InputWrapper>

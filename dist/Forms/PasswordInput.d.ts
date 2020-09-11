@@ -5,6 +5,7 @@ export interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement
     toggleShowClassname?: string;
     label?: string;
     errors?: any;
+    customErrors?: any;
     type?: 'text' | 'password';
     customShowHide?: (show: boolean) => ReactNode | string;
 }

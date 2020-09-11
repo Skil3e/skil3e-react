@@ -5,6 +5,7 @@ export interface InputWrapperProps extends HTMLAttributes<HTMLDivElement> {
     name?: string;
     label?: string;
     errors?: any;
+    customErrors?: any;
 }
 declare const InputWrapper: React.ForwardRefExoticComponent<InputWrapperProps & React.RefAttributes<HTMLDivElement>>;
 export default InputWrapper;

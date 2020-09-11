@@ -4,6 +4,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string;
     label?: string;
     errors?: any;
+    customErrors?: any;
     type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | 'week' | 'date';
 }
 declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;

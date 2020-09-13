@@ -12,6 +12,8 @@ export { default as Select } from "./Forms/Select";
 export type { SelectProps } from "./Forms/Select";
 export { default as Switch } from "./Forms/Switch";
 export type { SwitchProps } from "./Forms/Switch";
+export { default as CheckboxGroup } from "./Forms/CheckboxGroup";
+export type { CheckboxWrapperProps, CheckboxGroupValue } from "./Forms/CheckboxGroup";
 export { default as Icon } from "./Icon/Icon";
 export type { IconProps } from "./Icon/Icon";
 export { default as Loader } from "./Loader/Loader";

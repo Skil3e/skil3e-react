@@ -19,6 +19,9 @@ export type { SelectProps } from "./Forms/Select";
 export { default as Switch } from "./Forms/Switch";
 export type { SwitchProps } from "./Forms/Switch";
 
+export { default as CheckboxGroup } from "./Forms/CheckboxGroup";
+export type { CheckboxWrapperProps, CheckboxGroupValue } from "./Forms/CheckboxGroup";
+
 export { default as Icon } from "./Icon/Icon";
 export type { IconProps } from "./Icon/Icon";
 
@@ -49,9 +52,9 @@ export type { CSSParallaxContainerProps } from "./Parallax/CSSParallax";
 export { default as ParallaxContainer } from "./Parallax/ParallaxContainer";
 export type { ParallaxContainerProps } from "./Parallax/ParallaxContainer";
 
-export {default as Timeline} from "./Timeline/Timeline"
-export type {TimelineItem, TimelineProps} from "./Timeline/Timeline"
+export { default as Timeline } from "./Timeline/Timeline"
+export type { TimelineItem, TimelineProps } from "./Timeline/Timeline"
 
-export type {BreakPoints, Intents, Pos, Sizes} from "./types"
+export type { BreakPoints, Intents, Pos, Sizes } from "./types"
 
 export { joinIgnoreEmpty, joinStr, createLabel, useInterval, convertDate, useCheckForScreens, useThemeChanger, createColumns, createSpacers } from "./utilities"

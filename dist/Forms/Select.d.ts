@@ -10,6 +10,7 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
     errors?: any;
     customErrors?: any;
     options: Option[];
+    labelClassName?: string;
 }
 declare const Select: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLSelectElement>>;
 export default Select;

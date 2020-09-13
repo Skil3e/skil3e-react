@@ -11,6 +11,7 @@ export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputEleme
     errors?: any
     customErrors?: any
     values: CheckboxGroupValue[]
+    labelClassName?: string
 }
 
 const CheckboxGroup = React.forwardRef(
@@ -23,11 +24,12 @@ const CheckboxGroup = React.forwardRef(
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
                           customErrors={ customErrors }
+                          labelClassName={props.labelClassName}
             >
                 <div className={ "flex--center" }>
                     { values.map( ( val, i ) =>
                         <div key={ val.id } className={ "inline-flex al__it--center check-badge" }>
-                            <input className={ "check-badge__checkbox w--auto mr--sm" }
+                            <input className={ "checkbox w--auto mr--sm" }
                                    hidden
                                    ref={ ref }
                                    type={ "checkbox" }
@@ -36,7 +38,7 @@ const CheckboxGroup = React.forwardRef(
                                    value={ val.value }
                                    { ...rest }
                             />
-                            <label className={ `check-badge__label${ i > 0 ? " ml--sm" : "" }` } htmlFor={ val.id }>{ createLabel( val.id ) }</label>
+                            <label className={ `badge-label${ i > 0 ? " ml--sm" : "" }` } htmlFor={ val.id }>{ createLabel( val.id ) }</label>
                         </div>
                     ) }
                 </div>

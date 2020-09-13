@@ -11,6 +11,7 @@ export interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement
     customErrors?: any
     type?: 'text' | 'password'
     customShowHide?: ( show: boolean ) => ReactNode | string
+    labelClassName?: string
 }
 
 const PasswordInput = React.forwardRef(
@@ -24,6 +25,7 @@ const PasswordInput = React.forwardRef(
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
                           customErrors={customErrors}
+                          labelClassName={props.labelClassName}
             >
                 <div className={ "flex--center relative" }>
                     <input style={ { paddingRight: 60 } } { ...rest } ref={ ref } className={ "password-input" + (className ? " " + className : "") } type={ show ? "text" : "password" } id={ id }/>

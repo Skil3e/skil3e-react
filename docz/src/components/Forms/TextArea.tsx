@@ -8,6 +8,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
     label?: string
     errors?: any
     customErrors?: any
+    labelClassName?: string
 }
 
 const Textarea = React.forwardRef(
@@ -20,6 +21,7 @@ const Textarea = React.forwardRef(
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
                           customErrors={customErrors}
+                          labelClassName={props.labelClassName}
             >
                 <textarea { ...rest } ref={ ref } className={ className } id={ id } />
             </InputWrapper>

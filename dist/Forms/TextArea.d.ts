@@ -5,6 +5,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
     label?: string;
     errors?: any;
     customErrors?: any;
+    labelClassName?: string;
 }
 declare const Textarea: React.ForwardRefExoticComponent<TextareaProps & React.RefAttributes<HTMLTextAreaElement>>;
 export default Textarea;

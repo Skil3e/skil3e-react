@@ -8,15 +8,17 @@ export interface InputWrapperProps extends HTMLAttributes<HTMLDivElement> {
     label?: string
     errors?: any
     customErrors?: any
+    labelClassName?: string
 }
 
 const InputWrapper = React.forwardRef(
     ( props: InputWrapperProps, ref?: React.Ref<HTMLDivElement> ) => {
         const { label, errors, customErrors, name, children, inputID, ...rest } = props;
         const className = joinIgnoreEmpty( "input-wrapper", props.className );
+        const labelClassName = joinIgnoreEmpty( "flex small px--sm mb--xs", props.labelClassName );
         return (
             <div { ...rest } ref={ ref } className={ className }>
-                { label && <label className={ "flex small px--sm mb--xs" } htmlFor={ inputID }>{ label }</label> }
+                { label && <label className={ labelClassName } htmlFor={ inputID }>{ label }</label> }
                 { children }
                 { !customErrors && errors && name && errors[name] && <span className={ "flex small px--sm text--danger mt--xs" }>{ errors[name].message }</span> }
                 {customErrors && <span className={ "flex small px--sm text--danger mt--xs" }>{ customErrors }</span>}

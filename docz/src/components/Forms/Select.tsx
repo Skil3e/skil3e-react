@@ -14,6 +14,7 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
     errors?: any
     customErrors?: any
     options: Option[]
+    labelClassName?: string
 }
 
 const Select = React.forwardRef(
@@ -26,6 +27,7 @@ const Select = React.forwardRef(
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
                           customErrors={customErrors}
+                          labelClassName={props.labelClassName}
             >
                 <select { ...rest } ref={ ref } id={ id }>
                     { options.map( option => <option key={ option.value } value={ option.value }>{ option.label ? option.label : option.value }</option> ) }

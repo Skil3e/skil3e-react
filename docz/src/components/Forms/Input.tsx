@@ -8,6 +8,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string
     errors?: any
     customErrors?: any
+    labelClassName?: string
     type?: 'text' | 'number' | 'tel' | 'email' | 'password' | 'datetime-local' | 'file' | 'month' | 'search' | 'time' | 'url' | 'week' | 'date'
 }
 
@@ -21,6 +22,7 @@ const Input = React.forwardRef(
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
                           customErrors={customErrors}
+                          labelClassName={props.labelClassName}
             >
                 <input { ...rest } ref={ ref } className={ className } type={ type } id={ id } />
             </InputWrapper>

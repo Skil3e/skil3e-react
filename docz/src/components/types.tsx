@@ -1,7 +1,7 @@
 //-------------------------------------------------------------------------------//
 // General
 //-------------------------------------------------------------------------------//
-export type Intents = 'accent' | 'info' | 'success' | 'danger' | 'warning'
+export type Intents = 'accent' | 'info' | 'success' | 'danger' | 'warning' | 'text' | 'bg' | string
 export type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export interface BreakPoints<T> {

@@ -1,4 +1,4 @@
-export declare type Intents = 'accent' | 'info' | 'success' | 'danger' | 'warning';
+export declare type Intents = 'accent' | 'info' | 'success' | 'danger' | 'warning' | 'text' | 'bg' | string;
 export declare type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export interface BreakPoints<T> {
     sm?: T;

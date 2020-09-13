@@ -29,7 +29,7 @@ const Select = React.forwardRef(
                           customErrors={ customErrors }
                           labelClassName={ labelClassName }
             >
-                <select { ...rest } ref={ ref } id={ id }>
+                <select { ...rest } ref={ ref } id={ id } name={ name }>
                     { options.map( option => <option key={ option.value } value={ option.value }>{ option.label ? option.label : option.value }</option> ) }
                 </select>
             </InputWrapper>

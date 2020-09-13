@@ -17,11 +17,11 @@ export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Switch = React.forwardRef(
     ( props: SwitchProps, ref?: React.Ref<HTMLInputElement> ) => {
-        const { id, title, intent, onChange, checked, emoji, className, label, switchSize, ...rest } = props;
+        const { id, title, intent, onChange, checked, emoji, className, label, switchSize, name, ...rest } = props;
         const SwitchClassName = joinIgnoreEmpty( "switch flex--center", intent, switchSize, className );
         return (
             <div className={ SwitchClassName } title={ title }>
-                <input ref={ ref } { ...rest } className="switch__checkbox" id={ id } type={ "checkbox" } onChange={ onChange } checked={ checked }/>
+                <input { ...rest } ref={ ref } className="switch__checkbox" id={ id } name={ name } type={ "checkbox" } onChange={ onChange } checked={ checked }/>
                 <label className={ `switch__label ${ switchSize }` } htmlFor={ id }>
                     <span className={ `switch__button flex--center-middle cursor--pointer` }>{ emoji }</span>
                 </label>
@@ -31,7 +31,7 @@ const Switch = React.forwardRef(
     } )
 
 Switch.defaultProps = {
-    intent: "accent",
-    switchSize  : "md"
+    intent    : "accent",
+    switchSize: "md"
 }
 export default Switch

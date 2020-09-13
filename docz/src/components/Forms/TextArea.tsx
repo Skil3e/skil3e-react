@@ -23,7 +23,7 @@ const Textarea = React.forwardRef(
                           customErrors={ customErrors }
                           labelClassName={ labelClassName }
             >
-                <textarea { ...rest } ref={ ref } className={ className } id={ id }/>
+                <textarea { ...rest } name={ name } ref={ ref } className={ className } id={ id }/>
             </InputWrapper>
         )
     } )

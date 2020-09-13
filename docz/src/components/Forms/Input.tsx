@@ -24,7 +24,7 @@ const Input = React.forwardRef(
                           customErrors={ customErrors }
                           labelClassName={ labelClassName }
             >
-                <input { ...rest } ref={ ref } className={ className } type={ type } id={ id }/>
+                <input { ...rest } ref={ ref } className={ className } type={ type } id={ id } name={ name }/>
             </InputWrapper>
         )
     } )

@@ -13,17 +13,17 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 
 const Textarea = React.forwardRef(
     ( props: TextareaProps, ref?: React.Ref<HTMLTextAreaElement> ) => {
-        const { id, label, errors,customErrors, className, wrapperClassName, ...rest } = props
+        const { id, label, errors, customErrors, className, wrapperClassName, labelClassName, name, ...rest } = props
         return (
             <InputWrapper className={ wrapperClassName }
                           inputID={ id }
-                          name={ props.name }
+                          name={ name }
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
-                          customErrors={customErrors}
-                          labelClassName={props.labelClassName}
+                          customErrors={ customErrors }
+                          labelClassName={ labelClassName }
             >
-                <textarea { ...rest } ref={ ref } className={ className } id={ id } />
+                <textarea { ...rest } ref={ ref } className={ className } id={ id }/>
             </InputWrapper>
         )
     } )

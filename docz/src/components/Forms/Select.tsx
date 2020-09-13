@@ -19,15 +19,15 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
 
 const Select = React.forwardRef(
     ( props: SelectProps, ref?: React.Ref<HTMLSelectElement> ) => {
-        const { id, label, errors,customErrors, className, wrapperClassName, options, ...rest } = props
+        const { id, label, errors, customErrors, className, wrapperClassName, options, labelClassName, name, ...rest } = props
         return (
             <InputWrapper className={ wrapperClassName }
                           inputID={ id }
-                          name={ props.name }
+                          name={ name }
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
-                          customErrors={customErrors}
-                          labelClassName={props.labelClassName}
+                          customErrors={ customErrors }
+                          labelClassName={ labelClassName }
             >
                 <select { ...rest } ref={ ref } id={ id }>
                     { options.map( option => <option key={ option.value } value={ option.value }>{ option.label ? option.label : option.value }</option> ) }

@@ -16,16 +16,16 @@ export interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement
 
 const PasswordInput = React.forwardRef(
     ( props: PasswordInputProps, ref?: React.Ref<HTMLInputElement> ) => {
-        const { type, id, label, errors,customErrors, className, wrapperClassName, customShowHide, toggleShowClassname, ...rest } = props
+        const { type, id, name, label, errors, customErrors, className, wrapperClassName, customShowHide, toggleShowClassname, labelClassName, ...rest } = props
         const [ show, setShow ] = useState( false );
         return (
             <InputWrapper className={ wrapperClassName }
                           inputID={ id }
-                          name={ props.name }
+                          name={ name }
                           label={ label ? label : id ? createLabel( id ) : undefined }
                           errors={ errors }
-                          customErrors={customErrors}
-                          labelClassName={props.labelClassName}
+                          customErrors={ customErrors }
+                          labelClassName={ labelClassName }
             >
                 <div className={ "flex--center relative" }>
                     <input style={ { paddingRight: 60 } } { ...rest } ref={ ref } className={ "password-input" + (className ? " " + className : "") } type={ show ? "text" : "password" } id={ id }/>

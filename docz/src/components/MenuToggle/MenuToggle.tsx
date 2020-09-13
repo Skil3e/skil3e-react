@@ -10,10 +10,10 @@ export interface MenuToggleProps extends HTMLAttributes<HTMLDivElement> {
 
 const MenuToggle = React.forwardRef(
     ( props: MenuToggleProps, ref?: React.Ref<HTMLDivElement> ) => {
-        const { isOpen = false, intent= "accent" } = props;
+        const { isOpen, intent= "accent", ...rest } = props;
         const className = joinIgnoreEmpty( "menu-toggle", props.className, (isOpen ? " menu-toggle--open" : "") );
         return (
-            <div { ...props } ref={ ref } className={ className }>
+            <div { ...rest } ref={ ref } className={ className }>
                 <div className={ `menu-toggle__dot bg--${intent}` }/>
                 <div className={ `menu-toggle__dot bg--${intent}` }/>
                 <div className={ `menu-toggle__dot bg--${intent}` }/>

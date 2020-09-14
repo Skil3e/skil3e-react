@@ -12,7 +12,9 @@ export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputEleme
     customErrors?: any;
     values: CheckboxGroupValue[];
     labelClassName?: string;
+    badgeClassName?: string;
     intent?: Intents;
+    badgeSize?: 'xs' | 'sm' | 'lg' | 'xl';
 }
 declare const CheckboxGroup: React.ForwardRefExoticComponent<CheckboxWrapperProps & React.RefAttributes<HTMLInputElement>>;
 export default CheckboxGroup;

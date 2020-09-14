@@ -13,12 +13,14 @@ export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputEleme
     customErrors?: any
     values: CheckboxGroupValue[]
     labelClassName?: string
+    badgeClassName?: string
     intent?: Intents
+    badgeSize?: 'xs' | 'sm' | 'lg' | 'xl';
 }
 
 const CheckboxGroup = React.forwardRef(
     ( props: CheckboxWrapperProps, ref?: React.Ref<HTMLInputElement> ) => {
-        const { id, label, errors, customErrors, wrapperClassName, labelClassName, values, intent,name,className, ...rest } = props
+        const { id, label, errors, customErrors, wrapperClassName, labelClassName, values, intent, name, className, badgeClassName, badgeSize, ...rest } = props;
         return (
             <InputWrapper className={ joinIgnoreEmpty( "check-badge-wrapper", wrapperClassName ) }
                           inputID={ id }
@@ -40,7 +42,7 @@ const CheckboxGroup = React.forwardRef(
                                    value={ val.value }
                                    { ...rest }
                             />
-                            <label className={ `badge-label${ i > 0 ? " ml--sm" : "" }` } htmlFor={ val.id }>{ createLabel( val.id ) }</label>
+                            <label className={ joinIgnoreEmpty( "badge-label", badgeClassName, badgeSize, (i > 0 ? " ml--sm" : "") ) } htmlFor={ val.id }>{ createLabel( val.id ) }</label>
                         </div>
                     ) }
                 </div>

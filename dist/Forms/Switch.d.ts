@@ -7,8 +7,8 @@ export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     intent?: Intents;
     title?: string;
-    onChange: () => void;
-    checked: boolean;
+    onChange?: () => void;
+    checked?: boolean;
     emoji?: string;
     label?: string;
 }

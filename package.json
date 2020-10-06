@@ -42,5 +42,9 @@
     "tslib": "^2.0.0",
     "skil3e-css": "^2.1.37",
     "framer-motion": "^2.6.5"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.5.3",
+    "react-popper": "^2.2.3"
   }
 }

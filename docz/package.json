@@ -17,13 +17,15 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
+    "@popperjs/core": "^2.5.3",
     "docz": "latest",
+    "framer-motion": "2.6.5",
     "gatsby-plugin-sass": "^2.3.12",
     "node-sass": "npm:sass@^1.26.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "skil3e-css": "^2.1.33",
-    "framer-motion": "2.6.5"
+    "react-popper": "^2.2.3",
+    "skil3e-css": "^2.1.33"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",

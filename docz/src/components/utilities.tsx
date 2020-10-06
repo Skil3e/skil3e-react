@@ -145,13 +145,13 @@ export function createSpacers( spacer?: CreateSpacersProps, prefix?: string ): s
 
 function makeSpacers( type: BreakPoints<Pos>, breakPoint: "sm" | "md" | "lg" | "xl", prefix: string ): string {
     let val: string = "";
-    val += type[breakPoint] && typeof type[breakPoint]! === typeOfSizes && type[breakPoint]! ? ` ${ breakPoint }__${ prefix }--${ type[breakPoint]! }` : "";
-    val += type[breakPoint] && type[breakPoint]!.top ? ` ${ breakPoint }__${ prefix }t--${ type[breakPoint]!.top }` : "";
-    val += type[breakPoint] && type[breakPoint]!.bottom ? ` ${ breakPoint }__${ prefix }b--${ type[breakPoint]!.bottom }` : "";
-    val += type[breakPoint] && type[breakPoint]!.left ? ` ${ breakPoint }__${ prefix }l--${ type[breakPoint]!.left }` : "";
-    val += type[breakPoint] && type[breakPoint]!.right ? ` ${ breakPoint }__${ prefix }r--${ type[breakPoint]!.right }` : "";
-    val += type[breakPoint] && type[breakPoint]!.x ? ` ${ breakPoint }__${ prefix }x--${ type[breakPoint]!.x }` : "";
-    val += type[breakPoint] && type[breakPoint]!.y ? ` ${ breakPoint }__${ prefix }y--${ type[breakPoint]!.y }` : "";
+    val += type[breakPoint] && typeof type[breakPoint]! === typeOfSizes && type[breakPoint]! ? ` ${ breakPoint }:${ prefix }--${ type[breakPoint]! }` : "";
+    val += type[breakPoint] && type[breakPoint]!.top ? ` ${ breakPoint }:${ prefix }t--${ type[breakPoint]!.top }` : "";
+    val += type[breakPoint] && type[breakPoint]!.bottom ? ` ${ breakPoint }:${ prefix }b--${ type[breakPoint]!.bottom }` : "";
+    val += type[breakPoint] && type[breakPoint]!.left ? ` ${ breakPoint }:${ prefix }l--${ type[breakPoint]!.left }` : "";
+    val += type[breakPoint] && type[breakPoint]!.right ? ` ${ breakPoint }:${ prefix }r--${ type[breakPoint]!.right }` : "";
+    val += type[breakPoint] && type[breakPoint]!.x ? ` ${ breakPoint }:${ prefix }x--${ type[breakPoint]!.x }` : "";
+    val += type[breakPoint] && type[breakPoint]!.y ? ` ${ breakPoint }:${ prefix }y--${ type[breakPoint]!.y }` : "";
     return val
 }
 
@@ -162,10 +162,10 @@ export function createColumns( size?: number | BreakPoints<number> ): string {
         if (typeof size === "number") {
             col += `col--${ size }`
         } else {
-            col += size.sm ? ` sm__col--${ size.sm }` : "";
-            col += size.md ? ` md__col--${ size.md }` : "";
-            col += size.lg ? ` md__col--${ size.lg }` : "";
-            col += size.xl ? ` xl__col--${ size.xl }` : "";
+            col += size.sm ? ` sm:col--${ size.sm }` : "";
+            col += size.md ? ` md:col--${ size.md }` : "";
+            col += size.lg ? ` lg:col--${ size.lg }` : "";
+            col += size.xl ? ` xl:col--${ size.xl }` : "";
         }
     }
     return col;

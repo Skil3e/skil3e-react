@@ -28,6 +28,9 @@ export type { IconProps } from "./Icon/Icon";
 export { default as Loader } from "./Loader/Loader";
 export type { LoaderProps, SvgAnimationProps } from "./Loader/Loader";
 
+export { default as Portal } from "./Portal/Portal"
+export type { PortalProps } from "./Portal/Portal";
+
 export { default as Modal } from "./Modal/Modal"
 export type { ModalProps } from "./Modal/Modal"
 
@@ -52,9 +55,12 @@ export type { CSSParallaxContainerProps } from "./Parallax/CSSParallax";
 export { default as ParallaxContainer } from "./Parallax/ParallaxContainer";
 export type { ParallaxContainerProps } from "./Parallax/ParallaxContainer";
 
-export { default as Timeline } from "./Timeline/Timeline"
-export type { TimelineItem, TimelineProps } from "./Timeline/Timeline"
+export {default as Lightbox} from "./Lightbox/Lightbox";
+export type {Item, ILightbox} from "./Lightbox/Lightbox";
 
-export type { BreakPoints, Intents, Pos, Sizes } from "./types"
+export { default as Timeline } from "./Timeline/Timeline";
+export type { TimelineItem, TimelineProps } from "./Timeline/Timeline";
 
-export { joinIgnoreEmpty, joinStr, createLabel, useInterval, convertDate, useCheckForScreens, useThemeChanger, createColumns, createSpacers } from "./utilities"
+export type { BreakPoints, Intents, Pos, Sizes } from "./types";
+
+export { joinIgnoreEmpty, joinStr, createLabel, useInterval, convertDate, useCheckForScreens, useThemeChanger, createColumns, createSpacers } from "./utilities";

@@ -1,8 +1,4 @@
 import { Dispatch, FunctionComponent, ReactNode, SetStateAction } from "react";
-export interface PortalProps {
-    className: string;
-    onClick: (e: any) => void;
-}
 interface childrenWithProps {
     show: boolean;
     setShow: Dispatch<SetStateAction<boolean>>;

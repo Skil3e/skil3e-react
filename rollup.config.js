@@ -37,6 +37,7 @@ export default {
             targets: [
                 { src: './LICENSE', dest: 'dist/' },
                 { src: './README.md', dest: 'dist/' },
+                 {src: "./docz/src/components/Lightbox/lightbox.scss", dest: 'dist/Lightbox'}
             ]
         })
     ]

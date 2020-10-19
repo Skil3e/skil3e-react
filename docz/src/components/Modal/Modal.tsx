@@ -26,8 +26,7 @@ const Modal: FunctionComponent<ModalProps> = (
         trigger,
     }
 ) => {
-
-    const classWrapper = (wrapperClassName ? " " + wrapperClassName : "");
+    const wrapperClass = wrapperClassName ? wrapperClassName : "";
     const classModal = joinIgnoreEmpty( 'modal absolute-x--center p--md mt--xxl w--50 bg--bg', modalClassName );
     const classTrigger = joinIgnoreEmpty( 'modal-trigger', triggerClassName );
     const [ show, setShow ] = useState( false );
@@ -51,7 +50,7 @@ const Modal: FunctionComponent<ModalProps> = (
     }
 
     const modal = show ? (
-        <Portal className={ classWrapper } onClick={ handleHideOnClickOutside }>
+        <Portal className={ wrapperClass } onClick={ handleHideOnClickOutside }>
             <div className={ classModal }>
                 { children( { show, setShow } ) }
             </div>

@@ -1,6 +1,6 @@
 import * as React from "react";
 export interface PortalProps {
-    className: string;
+    className?: string;
     onClick: (e: any) => void;
 }
 export default class Portal extends React.Component<PortalProps> {

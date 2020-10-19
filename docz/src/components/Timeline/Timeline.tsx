@@ -33,14 +33,14 @@ const Timeline: FunctionComponent<TimelineProps> = memo( ( { items, className, i
             <div className={ "timeline relative py--lg" }>
 
                 <motion.div
-                    className={ "timeline__line absolute left--0 md__absolute-x--center top--0 h--100 bg--text" }
+                    className={ "timeline__line absolute left--0 md:absolute-x--center top--0 h--100 bg--text" }
                     variants={ LineVariants }
                 />
 
                 { items.map( ( item, i ) =>
                     <motion.div
                         key={ item.order }
-                        className={ `timeline__item relative my--lg md__w--50 ${ !isMobile ? (i % 2 == 0 ? "text--right pr--xl" : "text--left ml--auto pl--xl") : "text--left ml--auto pl--xl" }` }
+                        className={ `timeline__item relative my--lg md:w--50 ${ !isMobile ? (i % 2 == 0 ? "text--right pr--xl" : "text--left ml--auto pl--xl") : "text--left ml--auto pl--xl" }` }
                         variants={ TimelineItemVariants }
                     >
                         { renderedItem ? renderedItem( item ) :

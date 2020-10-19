@@ -42,7 +42,7 @@ const CircleProgressBar: FunctionComponent<CircleProgressBarProps> = memo( ( { p
         }
     }
     return (
-        <div className={ "flex--column al__it--center" }>
+        <div className={ "flex flex--column al__it--center" }>
             <div className={ "relative" }>
                 <svg xmlns="http://www.w3.org/2000/svg" width={ width } viewBox="0 0 200 200" strokeWidth={ 20 } strokeLinecap={ "round" }>
                     <path className="bg" stroke="var(--border)" d="M41 149.5a77 77 0 1 1 117.93 0" fill="none"/>

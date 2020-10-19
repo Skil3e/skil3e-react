@@ -44,7 +44,7 @@ const Timeline: FunctionComponent<TimelineProps> = memo( ( { items, className, i
                         variants={ TimelineItemVariants }
                     >
                         { renderedItem ? renderedItem( item ) :
-                            <div className={ "p--lg brd brd--border round" }>
+                            <div className={ "p--lg border border--border round" }>
                                 { item.from && item.to && <small className={ "text--textDimmed" }>From { convertDate( item.from ) } till { item.isCurrent ? item.to : convertDate( item.to ) }</small> }
                                 { item.title && <h3 className={ "h4 my--xs font--bold" }>{ item.title }</h3> }
                                 { item.desc && <p className={ "m--0 text--textDimmed" }>{ item.desc }</p> }

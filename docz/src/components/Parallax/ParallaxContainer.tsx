@@ -5,21 +5,21 @@ import { motion, useTransform, useViewportScroll } from "framer-motion";
 export interface ParallaxContainerProps {
     speed?: number
     offset?: number
+    opacityFactor?: number
     className?: string
     useOpacity?: boolean
 }
 
-const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { children, speed = 4, className, useOpacity } ) => {
+const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { children, speed = 4, className, useOpacity,opacityFactor = 800, offset = 0 } ) => {
     const [ elementTop, setElementTop ] = useState( 0 );
     const ref = useRef<any>( null );
     const { scrollY } = useViewportScroll();
 
-    const y = useTransform( scrollY, [ elementTop, elementTop + speed ], [ 0, 1 ], {
+    const y = useTransform( scrollY, [ elementTop + offset, elementTop + speed + offset ], [ 0, 1 ], {
         clamp: false
     } );
-
-    const opacityRange = [ 1, 0 ]
-    const opacity = useTransform( scrollY, [ elementTop * 500, (elementTop + speed) * 500 ], opacityRange, {
+    const xRange = [0, opacityFactor]
+    const opacity = useTransform( scrollY, xRange, [ 1, 0 ], {
         clamp: true,
     } );
 
@@ -29,13 +29,15 @@ const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { c
     }, [ ref ] );
 
     return (
-        <motion.div className={ className } ref={ ref }
-                    style={ {
-                        y,
-                        opacity: useOpacity ? opacity : undefined
-                    } }>
-            { children }
-        </motion.div>
+        <div ref={ ref } className={ className }>
+            <motion.div
+                style={ {
+                    y,
+                    opacity: useOpacity ? opacity : undefined
+                } }>
+                { children }
+            </motion.div>
+        </div>
     )
 } )
 

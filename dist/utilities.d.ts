@@ -1,6 +1,12 @@
 import { BreakPoints, Pos } from "./types";
 import { Dispatch, SetStateAction } from "react";
-export declare const useCheckForScreens: () => [boolean, string];
+export declare type ScreenBreakpoint = {
+    phone?: number;
+    tablet?: number;
+    laptop?: number;
+    desktop?: number;
+};
+export declare const useCheckForScreens: (breakPoints?: ScreenBreakpoint | undefined) => [boolean, string];
 export declare const useThemeChanger: () => [string, Dispatch<SetStateAction<string>>];
 export declare function joinStr(name?: string): string;
 export declare const joinIgnoreEmpty: (...strings: any) => any;

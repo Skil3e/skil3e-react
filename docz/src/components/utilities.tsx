@@ -6,15 +6,21 @@ const typeOfSizes = typeof 'xs' || 'sm' || 'md' || 'lg' || 'xl';
 //-------------------------------------------------------------------------------//
 // Screen Checker
 //-------------------------------------------------------------------------------//
-export const useCheckForScreens = () : [boolean, string] => {
+export type ScreenBreakpoint = {
+    phone?: number
+    tablet?: number
+    laptop?: number
+    desktop?: number
+}
+export const useCheckForScreens = ( breakPoints?: ScreenBreakpoint ): [ boolean, string ] => {
     const [ isMobile, setIsMobile ] = useState( false );
     const [ screen, setScreen ] = useState( "" );
 
     function checker() {
-        const phone = 480;
-        const tablet = 860;
-        const laptop = 992;
-        const desktop = 1200;
+        const phone = breakPoints?.phone ? breakPoints.phone : 480;
+        const tablet = breakPoints?.tablet ? breakPoints.tablet : 768;
+        const laptop = breakPoints?.laptop ? breakPoints.laptop : 992;
+        const desktop = breakPoints?.desktop ? breakPoints.desktop : 1200;
         let windowWidth = document.documentElement.clientWidth;
         if (windowWidth < phone) {
             setIsMobile( true );
@@ -45,7 +51,7 @@ export const useCheckForScreens = () : [boolean, string] => {
 //-------------------------------------------------------------------------------//
 // Theme Changer
 //-------------------------------------------------------------------------------//
-export const useThemeChanger = () : [string, Dispatch<SetStateAction<string>>] => {
+export const useThemeChanger = (): [ string, Dispatch<SetStateAction<string>> ] => {
     const [ theme, setTheme ] = useState( "" );
 
     useEffect( () => {

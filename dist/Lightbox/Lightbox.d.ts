@@ -41,7 +41,7 @@ export default class Lightbox<T extends Item> extends React.PureComponent<ILight
     classPrefix: string;
     showCloseButton?: boolean;
     closeOnClickOutside?: boolean;
-    iconClose: string;
+    iconClose: string | JSX.Element | ReactNode;
     showArrows?: boolean;
     arrowNext: string | JSX.Element | ReactNode;
     arrowPrevious: string | JSX.Element | ReactNode;

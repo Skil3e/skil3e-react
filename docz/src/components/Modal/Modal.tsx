@@ -26,7 +26,7 @@ const Modal: FunctionComponent<ModalProps> = (
         trigger,
     }
 ) => {
-    const wrapperClass = wrapperClassName ? wrapperClassName : "";
+    const wrapperClass = joinIgnoreEmpty( "modal-wrapper", wrapperClassName );
     const classModal = joinIgnoreEmpty( 'modal absolute-x--center p--md mt--xxl w--50 bg--bg', modalClassName );
     const classTrigger = joinIgnoreEmpty( 'modal-trigger', triggerClassName );
     const [ show, setShow ] = useState( false );

@@ -8,6 +8,7 @@ export type CheckboxGroupValue = { id: string, value: string };
 
 export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string
+    badgeWrapperClassName?: string
     label?: string
     errors?: any
     customErrors?: any
@@ -16,12 +17,13 @@ export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputEleme
     badgeClassName?: string
     intent?: Intents
     badgeSize?: 'xs' | 'sm' | 'lg' | 'xl';
+    radio?: boolean
 }
 
 const CheckboxGroup = React.forwardRef(
     ( props: CheckboxWrapperProps, ref?: React.Ref<HTMLInputElement> ) => {
-        const { id, label, errors, customErrors, wrapperClassName, labelClassName, values, intent, name, className, badgeClassName, badgeSize, ...rest } = props;
-        const badgeCls = joinIgnoreEmpty("inline-flex al__it--center check-badge", intent, badgeSize)
+        const { id, label, errors, customErrors, wrapperClassName, labelClassName, values, intent, name, className, badgeWrapperClassName, badgeClassName, badgeSize, radio, ...rest } = props;
+        const badgeCls = joinIgnoreEmpty( "inline-flex al__it--center check-badge", intent, badgeSize, badgeWrapperClassName )
         return (
             <InputWrapper className={ joinIgnoreEmpty( "check-badge-wrapper", wrapperClassName ) }
                           inputID={ id }
@@ -37,7 +39,7 @@ const CheckboxGroup = React.forwardRef(
                             <input className={ joinIgnoreEmpty( "checkbox w--auto mr--sm", className ) }
                                    hidden
                                    ref={ ref }
-                                   type={ "checkbox" }
+                                   type={ radio ? "radio" : "checkbox" }
                                    name={ name }
                                    id={ val.id }
                                    value={ val.value }

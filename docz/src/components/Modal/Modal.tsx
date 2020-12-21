@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { joinIgnoreEmpty } from "../utilities";
-import { Dispatch, FunctionComponent, ReactNode, SetStateAction, useState } from "react";
+import { Dispatch, FunctionComponent, ReactNode, SetStateAction, useEffect, useState } from "react";
 import Portal from "../Portal/Portal";
 
 
@@ -30,6 +30,12 @@ const Modal: FunctionComponent<ModalProps> = (
     const classModal = joinIgnoreEmpty( 'modal', modalClassName );
     const classTrigger = joinIgnoreEmpty( 'modal-trigger', triggerClassName );
     const [ show, setShow ] = useState( false );
+
+    useEffect( () => {
+        return () => {
+            document.body.style.overflow = '';
+        }
+    }, [] )
 
     function handleShow() {
         setShow( true );

@@ -4,7 +4,7 @@ import { InputHTMLAttributes } from "react";
 import { createLabel, joinIgnoreEmpty } from "../utilities";
 import { Intents } from "../types";
 
-export type CheckboxGroupValue = { id: string, value: string };
+export type CheckboxGroupValue = { id: string, value: string | number, label?: string };
 
 export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string
@@ -39,7 +39,7 @@ const CheckboxGroup = React.forwardRef(
                         <div key={ val.id } className={ badgeCls }>
                             <input className={ joinIgnoreEmpty( "checkbox w--auto mr--sm", className ) }
                                    hidden
-                                   defaultChecked={checkedIndex ? checkedIndex === i : i === 0}
+                                   defaultChecked={ checkedIndex ? checkedIndex === i : i === 0 }
                                    ref={ ref }
                                    type={ radio ? "radio" : "checkbox" }
                                    name={ name }
@@ -47,7 +47,7 @@ const CheckboxGroup = React.forwardRef(
                                    value={ val.value }
                                    { ...rest }
                             />
-                            <label className={ joinIgnoreEmpty( "badge-label", badgeClassName, (i > 0 ? " ml--sm" : "") ) } htmlFor={ val.id }>{ createLabel( val.id ) }</label>
+                            <label className={ joinIgnoreEmpty( "badge-label", badgeClassName, (i > 0 ? " ml--sm" : "") ) } htmlFor={ val.id }>{ val.label ? val.label : createLabel( val.id ) }</label>
                         </div>
                     ) }
                 </div>

@@ -3,7 +3,8 @@ import { InputHTMLAttributes } from "react";
 import { Intents } from "../types";
 export declare type CheckboxGroupValue = {
     id: string;
-    value: string;
+    value: string | number;
+    label?: string;
 };
 export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string;

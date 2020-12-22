@@ -15,6 +15,7 @@ export interface ModalProps {
     modalClassName?: string
     triggerClassName?: string
     trigger: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
+    closeOnClickOutside?: boolean
 }
 
 const Modal: FunctionComponent<ModalProps> = (
@@ -24,6 +25,7 @@ const Modal: FunctionComponent<ModalProps> = (
         modalClassName,
         triggerClassName,
         trigger,
+        closeOnClickOutside= true
     }
 ) => {
     const wrapperClass = joinIgnoreEmpty( "modal-wrapper", wrapperClassName );
@@ -48,6 +50,9 @@ const Modal: FunctionComponent<ModalProps> = (
     }
 
     function handleHideOnClickOutside( e: any ) {
+        if (!closeOnClickOutside) {
+            return
+        }
         let modal = document.getElementsByClassName( 'modal-wrapper' )[0];
         if (e.target === modal) {
             setShow( false );

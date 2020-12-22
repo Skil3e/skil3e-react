@@ -9,6 +9,7 @@ export interface ModalProps {
     modalClassName?: string;
     triggerClassName?: string;
     trigger: ({ show, setShow }: childrenWithProps) => JSX.Element | ReactNode;
+    closeOnClickOutside?: boolean;
 }
 declare const Modal: FunctionComponent<ModalProps>;
 export default Modal;

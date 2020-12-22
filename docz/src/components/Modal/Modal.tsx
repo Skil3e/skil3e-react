@@ -16,6 +16,9 @@ export interface ModalProps {
     triggerClassName?: string
     trigger: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
     closeOnClickOutside?: boolean
+    onUnmount?: () => void
+    onClose?: () => void
+    onOpen?: () => void
 }
 
 const Modal: FunctionComponent<ModalProps> = (
@@ -25,7 +28,10 @@ const Modal: FunctionComponent<ModalProps> = (
         modalClassName,
         triggerClassName,
         trigger,
-        closeOnClickOutside= true
+        closeOnClickOutside= true,
+        onUnmount,
+        onClose,
+        onOpen
     }
 ) => {
     const wrapperClass = joinIgnoreEmpty( "modal-wrapper", wrapperClassName );
@@ -36,17 +42,20 @@ const Modal: FunctionComponent<ModalProps> = (
     useEffect( () => {
         return () => {
             document.body.style.overflow = '';
+            onUnmount && onUnmount()
         }
     }, [] )
 
     function handleShow() {
         setShow( true );
         document.body.style.overflow = 'hidden';
+        onOpen && onOpen()
     }
 
     function handleHide() {
         setShow( false );
         document.body.style.overflow = "";
+        onClose && onClose()
     }
 
     function handleHideOnClickOutside( e: any ) {
@@ -55,8 +64,7 @@ const Modal: FunctionComponent<ModalProps> = (
         }
         let modal = document.getElementsByClassName( 'modal-wrapper' )[0];
         if (e.target === modal) {
-            setShow( false );
-            document.body.style.overflow = "";
+            handleHide()
         }
     }
 

@@ -1,10 +1,10 @@
 import * as React from "react";
 import InputWrapper from "./InputWrapper";
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, ReactNode } from "react";
 import { createLabel, joinIgnoreEmpty } from "../utilities";
 import { Intents } from "../types";
 
-export type CheckboxGroupValue = { id: string, value: string | number, label?: string };
+export type CheckboxGroupValue = { id: string, value: string | number, label?: string | ReactNode };
 
 export interface CheckboxWrapperProps extends InputHTMLAttributes<HTMLInputElement> {
     wrapperClassName?: string

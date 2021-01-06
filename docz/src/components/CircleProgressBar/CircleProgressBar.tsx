@@ -51,6 +51,7 @@ const CircleProgressBar: FunctionComponent<CircleProgressBarProps> = memo( ( { p
                         stroke={ color }
                         fill={ "none" }
                         variants={ CircleProgressSvgVariants }
+                        initial={"init"}
                         animate={ inView ? "in" : "out" }
                     />
                 </svg>

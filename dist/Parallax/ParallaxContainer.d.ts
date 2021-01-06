@@ -5,6 +5,7 @@ export interface ParallaxContainerProps {
     opacityFactor?: number;
     className?: string;
     useOpacity?: boolean;
+    innerClassName?: string;
 }
 declare const ParallaxContainer: FunctionComponent<ParallaxContainerProps>;
 export default ParallaxContainer;

@@ -8,9 +8,10 @@ export interface ParallaxContainerProps {
     opacityFactor?: number
     className?: string
     useOpacity?: boolean
+    innerClassName?: string
 }
 
-const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { children, speed = 4, className, useOpacity,opacityFactor = 800, offset = 0 } ) => {
+const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { children, innerClassName, speed = 4, className, useOpacity, opacityFactor = 800, offset = 0 } ) => {
     const [ elementTop, setElementTop ] = useState( 0 );
     const ref = useRef<any>( null );
     const { scrollY } = useViewportScroll();
@@ -18,7 +19,7 @@ const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { c
     const y = useTransform( scrollY, [ elementTop + offset, elementTop + speed + offset ], [ 0, 1 ], {
         clamp: false
     } );
-    const xRange = [0, opacityFactor]
+    const xRange = [ 0, opacityFactor ]
     const opacity = useTransform( scrollY, xRange, [ 1, 0 ], {
         clamp: true,
     } );
@@ -31,6 +32,7 @@ const ParallaxContainer: FunctionComponent<ParallaxContainerProps> = memo( ( { c
     return (
         <div ref={ ref } className={ className }>
             <motion.div
+                className={ innerClassName }
                 style={ {
                     y,
                     opacity: useOpacity ? opacity : undefined

@@ -33,7 +33,7 @@ const Timeline: FunctionComponent<TimelineProps> = memo( ( { items, className, i
             <div className={ "timeline relative py--lg" }>
 
                 <motion.div
-                    className={ "timeline__line absolute left--0 md:absolute-x--center top--0 h--100 bg--text" }
+                    className={ "timeline__line absolute top--0 h--100 bg--text " + (isMobile ? "left--0" : "absolute-x--center") }
                     variants={ LineVariants }
                 />
 

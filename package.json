@@ -1,6 +1,6 @@
 {
   "name": "skil3e-react",
-  "version": "0.0.92",
+  "version": "0.0.93",
   "description": "React components library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -37,11 +37,11 @@
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "tslib": "^2.0.0",
-    "skil3e-css": "^3.0.0",
-    "framer-motion": "^2.6.5"
+    "react": "^16 || ^17",
+    "react-dom": "^16 || ^17",
+    "tslib": "^2",
+    "skil3e-css": "^3",
+    "framer-motion": "^2 || ^3"
   },
   "dependencies": {
     "@popperjs/core": "^2.5.3",

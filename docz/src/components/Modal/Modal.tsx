@@ -1,22 +1,23 @@
 import * as React from 'react';
+import { FunctionComponent, ReactNode, useState } from "react";
 import { joinIgnoreEmpty } from "../utilities";
-import { Dispatch, FunctionComponent, ReactNode, SetStateAction, useEffect, useState } from "react";
 import Portal from "../Portal/Portal";
 
 
 interface childrenWithProps {
-    show: boolean
-    setShow: Dispatch<SetStateAction<boolean>>
+    handleShow: () => void
+    handleHide: () => void
 }
 
 export interface ModalProps {
-    children: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
+    children: ( { handleShow, handleHide }: childrenWithProps ) => JSX.Element | ReactNode
     wrapperClassName?: string
     modalClassName?: string
     triggerClassName?: string
-    trigger: ( { show, setShow }: childrenWithProps ) => JSX.Element | ReactNode
+    trigger: ( { handleShow, handleHide }: childrenWithProps ) => JSX.Element | ReactNode
     closeOnClickOutside?: boolean
-    onUnmount?: () => void
+    onUnmount?: ( { handleShow, handleHide }: childrenWithProps ) => void
+    onMount?: ( { handleShow, handleHide }: childrenWithProps ) => void
     onClose?: () => void
     onOpen?: () => void
 }
@@ -28,10 +29,11 @@ const Modal: FunctionComponent<ModalProps> = (
         modalClassName,
         triggerClassName,
         trigger,
-        closeOnClickOutside= true,
-        onUnmount,
+        closeOnClickOutside = true,
         onClose,
-        onOpen
+        onOpen,
+        onUnmount,
+        onMount
     }
 ) => {
     const wrapperClass = joinIgnoreEmpty( "modal-wrapper", wrapperClassName );
@@ -39,12 +41,13 @@ const Modal: FunctionComponent<ModalProps> = (
     const classTrigger = joinIgnoreEmpty( 'modal-trigger', triggerClassName );
     const [ show, setShow ] = useState( false );
 
-    useEffect( () => {
-        return () => {
-            document.body.style.overflow = '';
-            onUnmount && onUnmount()
-        }
-    }, [] )
+    function onPortalMount() {
+        onMount && onMount( { handleShow, handleHide } )
+    }
+
+    function onPortalUnmount() {
+        onUnmount && onUnmount( { handleShow, handleHide } )
+    }
 
     function handleShow() {
         setShow( true );
@@ -69,16 +72,16 @@ const Modal: FunctionComponent<ModalProps> = (
     }
 
     const modal = show ? (
-        <Portal className={ wrapperClass } onClick={ handleHideOnClickOutside }>
+        <Portal className={ wrapperClass } onClick={ handleHideOnClickOutside } onUnmount={ onPortalUnmount } onMount={ onPortalMount }>
             <div className={ classModal }>
-                { children( { show, setShow } ) }
+                { children( { handleShow, handleHide } ) }
             </div>
         </Portal>
     ) : null;
     return (
         <>
             <div onClick={ handleShow } className={ classTrigger }>
-                { trigger( { show, setShow } ) }
+                { trigger( { handleShow, handleHide } ) }
             </div>
             { modal }
         </>

@@ -1,6 +1,6 @@
 {
   "name": "skil3e-react",
-  "version": "0.0.93",
+  "version": "0.0.95",
   "description": "React components library",
   "main": "index.cjs.js",
   "module": "index.esm.js",

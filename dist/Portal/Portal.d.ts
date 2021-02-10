@@ -2,6 +2,8 @@ import * as React from "react";
 export interface PortalProps {
     className?: string;
     onClick: (e: any) => void;
+    onMount?: () => void;
+    onUnmount?: () => void;
 }
 export default class Portal extends React.Component<PortalProps> {
     private readonly modalWrapper;
